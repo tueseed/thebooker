@@ -6,8 +6,8 @@
     <input type="text" class="form-control" placeholder="พิมพ์ชื่อหนังสือ,ผู้เขียน,หมวดหมู่ เพื่อค้นหา" aria-label="Username" aria-describedby="basic-addon1">
   </div>
 </div>
-<div class="row ml-2 mr-2" >
-  <div class="col-lg-5">
+<div class="row ml-2 mr-2" id="showbook">
+  <!-- <div class="col-lg-5">
     <div class="card shadow">
       <div class="card-horizontal">
         <div class="img-square-wrapper shadow">
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 

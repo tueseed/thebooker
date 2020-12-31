@@ -11,6 +11,16 @@
         $querytextadd = "INSERT INTO tbl_book(bookname,writer,category,descript,coverimage) VALUES('$bookname','$writer','$category','$description','$coverurl')";
         mysqli_query($conn,$querytextadd);
         echo 'Inseerted';
+    }else if($cmd == 'allbook')
+    {
+            $queryallbook = "SELECT * FROM tbl_book";
+            $query = mysqli_query($conn,$queryallbook);
+            $data = array();
+            while($obj = mysqli_fetch_assoc($query))
+            {
+                array_push($data,$obj);
+            }
+            echo json_encode($data); 
     }
     
 ?>

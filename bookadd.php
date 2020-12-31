@@ -31,9 +31,7 @@
           <div class="col-lg-4">
             <div class="form-group">
                 <label for="nameInput" class="font-weight-bold text-dark"><i class="fas fa-indent"></i> เรื่องย่อ</label>
-                <textarea class="form-control" id="bookdescription" rows="12">
-
-                </textarea>
+                <textarea class="form-control" id="bookdescription" rows="12"></textarea>
             </div>
           </div>
           <div class="col-lg-4 text-center">

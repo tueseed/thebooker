@@ -63,6 +63,7 @@ function addbook()
                 // }
                 // console.log(obj)
                 console.log(response)
+                // location.reload()      
             },
             complete :function()
             {
@@ -71,7 +72,8 @@ function addbook()
                     title: "เพิ่มข้อมูลหนังสือสำเร็จ",
                     type: 'success'
                     
-                  })        
+                  }).then(location.reload() ) 
+                   
             }					
         });
 }
