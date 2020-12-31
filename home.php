@@ -1,26 +1,28 @@
-
-
- <div class="row ml-2 mr-2" >
-  <!-- พื้น rendercard สถานะงานเดิม -->
-  <div class="card shadow">
-      <div class="card-body">
-        <div class="row">
-            <img src="https://ddoc.pea.co.th/assets/images/pea/digital-document.png" width="75" height="50" class="rounded mx-auto d-block" alt="">
-        </div>
-        <div class="row">
-          <h5 class="card-title font-weight-bold text-primary">ระบบสารบรรณอิเล็กทรอนิกส์(DDOC)</h5>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group ml-2 mb-2">
-          <a type="button" class="btn btn-sm btn-outline-secondary" href="https://ddoc.pea.co.th" target="_blank"><i class="fas fa-eye"></i></a>
-            <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash-alt"></i></button>
-        </div>
-      </div>
+<div class="row ml-2 mr-2">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">ค้นหาหนังสือ</span>
+    </div>
+    <input type="text" class="form-control" placeholder="พิมพ์ชื่อหนังสือ,ผู้เขียน,หมวดหมู่ เพื่อค้นหา" aria-label="Username" aria-describedby="basic-addon1">
   </div>
-  <a class="card shadow ml-2 w-25 nav-link" href="?action=market">
-    <i class="fas fa-plus-circle fa-5x my-auto mx-auto"></i>
-</a>
+</div>
+<div class="row ml-2 mr-2" >
+  <div class="col-lg-5">
+    <div class="card shadow">
+      <div class="card-horizontal">
+        <div class="img-square-wrapper shadow">
+            <img class="" src="https://lh3.googleusercontent.com/E_nfV7z6GqS77EiOlKDjXMGP553GudVmV_HjWTrrF96ac6opNdt_1dKa8n7D2ZUGHkq004mtLhOoS_z-AtKMvcWnunYZ9JZsB4GmnYCrLzunzxyyu0BsASVjgM_WNpqj3qyyPMc4=w2400" width="150" height="215" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h6 class="card-title">ชื่อหนังสือ : Python For Education</h4>
+            <p class="card-texts">ผู้เขียน : ใครคนนั้น</p>
+            <p class="card-text">หมวดหมู่ : คอมพิวเตอร์ โปรแกรม เทคโนโลยี</p>
+            <p class="card-text">สถานะ : ว่าง</p>
+            <p class="card-text">กำหนดคืน : --</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

@@ -6,18 +6,7 @@
 <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 <script src="./assets/js/notify.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139978749-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-139978749-1');
-</script> -->
-
 <script src="./scripts/global.js"></script>
-
 <script src="vendor/chart.js/Chart.min.js"></script>
 <script src="./assets/js/jquery.blockUI.js"></script>
 <script src="./assets/js/bootstrap-datepicker.min.js"></script>

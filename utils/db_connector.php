@@ -15,12 +15,12 @@
 	// $password = "p@ssw0rd";
   // $db = "auc_db";
 
-  $server = "rg4.pea.co.th";
-	$username = "auc_user";
-	$password = "p@ssw0rd";
-  $db = "auc_db";
+  $server = "us-cdbr-east-02.cleardb.com";
+	$username = "bcf30a6a0ed80f";
+	$password = "fa8e030a";
+  $db = "heroku_350e85e5fefce0a";
   
-
+  mysql://bcf30a6a0ed80f:fa8e030a@us-cdbr-east-02.cleardb.com/heroku_350e85e5fefce0a?reconnect=true
 	
   $conn = new mysqli($server, $username, $password, $db, 3306);
 
