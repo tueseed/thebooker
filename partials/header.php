@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ALL PEA</title>
+    <title>ระบบยืมหนังสือผ่านเว็บแอพพลิเคชั่น</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/theme_1545570683953.css">
     <link rel="stylesheet" href="./assets/css/star-rating.css">
@@ -30,7 +30,7 @@
         <div class="container-fluid">
           <a class="navbar-brand font-weight-bold" href="?action=rg1">
             <img src="./assets/images/pea-logo.png" width="100" class="d-inline-block align-top" alt="">
-            ALL PEA <span id="head_peaname"></span>
+            ระบบยืมหนังสือผ่านเว็บแอพพลิเคชั่น <span id="head_peaname"></span>
           </a>
           <div class="dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
