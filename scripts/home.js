@@ -5,8 +5,8 @@ querybook()
 function querybook()
 {
   var formData = new FormData()
-    formData.append('command','allbook')
-    $.ajax({
+  formData.append('command','allbook')
+  $.ajax({
             url: 'api/api_book_all.php',
             method: 'POST',
             data:formData,
@@ -45,24 +45,24 @@ function querybook()
             {
                 $('#showbook').unblock()    
             }					
-        });
+        })
 }
 
-function makebookcard(bookdetial)
+function makebookcard(bookdetail)
 {
   return[
     '<div class="col-lg-5 mt-3">',
-    '<a class="card nav-link shadow" href="?action=bookadd">',
+    '<a class="card nav-link shadow" href="?action=bookdetail&bookid=' + bookdetail.bookid + '">',
       '<div class="card-horizontal">',
         '<div class="img-square-wrapper shadow">',
-            '<img class="" src="https://lh3.googleusercontent.com/E_nfV7z6GqS77EiOlKDjXMGP553GudVmV_HjWTrrF96ac6opNdt_1dKa8n7D2ZUGHkq004mtLhOoS_z-AtKMvcWnunYZ9JZsB4GmnYCrLzunzxyyu0BsASVjgM_WNpqj3qyyPMc4=w2400" width="150" height="215" alt="Card image cap">',
+            '<img class="" src="' + bookdetail.coverimage+ '" width="150" height="215" alt="Card image cap">',
         '</div>',
         '<div class="card-body">',
-            '<h5 class="card-title">ชื่อหนังสือ : ' + bookdetial.bookname + '</h4>',
-            '<p class="card-texts">ผู้เขียน : ใครคนนั้น</p>',
-            '<p class="card-text">หมวดหมู่ : คอมพิวเตอร์ โปรแกรม เทคโนโลยี</p>',
-            '<p class="card-text">สถานะ : ว่าง</p>',
-            '<p class="card-text">กำหนดคืน : --</p>',
+            '<h5 class="card-title">ชื่อหนังสือ : ' + bookdetail.bookname + '</h4>',
+            '<p class="card-texts">ผู้เขียน : ' + bookdetail.writer + '</p>',
+            '<p class="card-text">หมวดหมู่ : ' + bookdetail.category + '</p>',
+            '<p class="card-text">สถานะ : ' + bookdetail.status+ '</p>',
+            '<p class="card-text">กำหนดคืน : ' +bookdetail.datereturn + '</p>',
         '</div>',
       '</div>',
     '</a>',
