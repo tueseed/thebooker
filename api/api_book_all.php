@@ -10,7 +10,7 @@
         $description = $_POST["description"];
         $querytextadd = "INSERT INTO tbl_book(bookname,writer,category,descript,coverimage) VALUES('$bookname','$writer','$category','$description','$coverurl')";
         mysqli_query($conn,$querytextadd);
-        echo 'Inseerted';
+        echo 'Inserted';
     }
     else if($cmd == 'allbook')
     {
@@ -34,6 +34,18 @@
             array_push($data,$obj);
         }
         echo json_encode($data); 
+    }
+    else if($cmd == 'editbook')
+    {
+        $bookid = $_POST["bookid"];
+        $bookname = $_POST["bookname"];
+        $writer = $_POST["writer"];
+        $category = $_POST["category"];
+        $coverurl = $_POST["coverurl"];
+        $description = $_POST["description"];
+        $queryallbook = "UPDATE tbl_book SET bookname = '$bookname' WHERE bookid='$bookid'";
+        mysqli_query($conn,$queryallbook);
+        echo 'Edited';
     }
     
 ?>
