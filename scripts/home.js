@@ -1,9 +1,9 @@
-// $(document).ready(
-//                 function(){
-//                             querybook()
-//                             processLogin()
-//                           }
-// )
+$(document).ready(
+                function(){
+                            querybook()
+                            // processLogin()
+                          }
+)
 
 
 

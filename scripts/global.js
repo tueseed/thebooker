@@ -9,8 +9,7 @@ function getUrlVars() {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
-querybook()
+consols.log('global_run')
 processLogin()
 
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
