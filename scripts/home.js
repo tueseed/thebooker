@@ -47,7 +47,7 @@ else if(getUrlVars()["code"])
                                   // var empInfo = checkEmp.val()
                                   // if(checkEmp.val() == null)
                                   // {
-                                      window.location.href = 'index.php?action=home'
+                                      //window.location.href = 'index.php?action=home'
                                   // }
                                   // else if(checkEmp.val() !== null)
                                   // {
