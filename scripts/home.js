@@ -1,6 +1,5 @@
 $(document).ready(
                 function(){
-                            console.log("A")
                             querybook()
                             processLogin()
                           }
@@ -12,7 +11,6 @@ $(document).ready(
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
 function processLogin()
 {
-  console.log('B')
   var chennelId = '1655539437'
   var clientId = 'd33ca1001671884fad04435cd62bd765'
   var callBackurl = 'https://thebooker.herokuapp.com?action=home'
@@ -53,10 +51,10 @@ function processLogin()
                                                 localStorage.setItem('name',profile.name)
                                                 localStorage.setItem('display_url',profile.picture)
                                                 localStorage.setItem('userId',profile.sub)
-                                                // $('#userDropdown').show()
                                                 $('#userName').html(profile.name)
                                                 $('#userPicture').attr('src',localStorage.getItem('display_url'))
-                                                console.log('C')
+                                                checkregis()
+                                                // var ckeckResult = await checkregis(profile.sub)
                                                 // var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
                                                 // var empInfo = checkEmp.val()
                                                 // if(checkEmp.val() == null)
@@ -85,9 +83,7 @@ function processLogin()
             })//End Ajax
   }//End If
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+//////////////////////////ฟังก์ชั่นแสดงหนังสือที่หน้าแรก/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function querybook()
 {
   var formData = new FormData()
@@ -133,7 +129,7 @@ function querybook()
             }					
         })
 }
-
+//////////////////สร้างงการ์ดหนังสือแต่ละเล่ม
 function makebookcard(bookdetail)
 {
   if(bookdetail.status == '0')
@@ -162,4 +158,50 @@ function makebookcard(bookdetail)
     '</a>',
   '</div>'
   ].join("")
+}
+/////////////////////////ตรวจสอบการลงทะเบียน
+async function checkregis(uid)
+{
+  var formData = new FormData()
+  formData.append('command','checkregis')
+  formData.append('uid',localStorage.getItem('userId'))
+  $.ajax({
+            url: 'api/member_api.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            beforeSend : function()
+            {  
+                // $('#showbook').block({
+                //                         message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',
+                //                         overlayCSS : { 
+                //                                         backgroundColor: '#ffffff',
+                //                                         opacity: 1
+                //                                     },
+                //                         css : {
+                //                             opacity: 1,
+                //                             border: 'none',
+                //                         }
+                //                         })
+            },
+            success: function(response) 
+            {
+                // if(response == 'yes')
+                // {
+
+                // }
+                // else if(response == 'no')
+                // {
+
+                // } 
+                console.log(response)   
+            },
+            complete :function()
+            {
+                // $('#showbook').unblock()    
+            }					
+        })
 }
