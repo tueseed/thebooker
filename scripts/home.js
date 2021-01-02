@@ -1,5 +1,76 @@
 querybook()
-
+////////////////Line Login////////////////////
+var chennelId = '1655539437'
+var clientId = 'd33ca1001671884fad04435cd62bd765'
+var callBackurl = 'https://thebooker.herokuapp.com'
+if(!getUrlVars()["code"])
+{
+  window.location.href= 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + chennelId + '&redirect_uri=' + callBackurl + '&state=12345abcd&scope=openid%20profile'
+}
+else if(getUrlVars()["code"])
+{
+  var code = getUrlVars()["code"]
+  $.ajax({
+    async: true,
+    crossDomain: true,
+    url: "https://api.line.me/oauth2/v2.1/token",
+    method: "POST",
+    headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache"
+              },
+    data: {
+            "grant_type": "authorization_code",
+            "code": code,
+            "redirect_uri": callBackurl,
+            "client_id": chennelId,
+            "client_secret": clientId
+          },
+    statusCode:{
+                400:function()
+                    {
+                      console.log('400')
+                      window.location.href = 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1654004533&redirect_uri=https://cscn.herokuapp.com&state=12345abcd&scope=openid'
+                    }
+               },
+    success: async function(response) {
+                                  var id_token = response.id_token
+                                  var base64 = id_token.split('.')[1]
+                                  var profile = await JSON.parse(window.atob(base64))
+                                  localStorage.setItem('name',profile.name)
+                                  localStorage.setItem('display_url',profile.picture)
+                                  localStorage.setItem('userId',profile.sub)
+                                  $('#userDropdown').show()
+                                  $('#userName').html(profile.name)
+                                  $('#userPicture').attr('src',profile.picture)
+                                  var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
+                                  var empInfo = checkEmp.val()
+                                  if(checkEmp.val() == null)
+                                  {
+                                      window.location.href = 'index.php?action=emp_regis'
+                                  }
+                                  else if(checkEmp.val() !== null)
+                                  {
+                                    localStorage.setItem('userId',Object.values(empInfo)[0].uid)
+                                    localStorage.setItem('name',Object.values(empInfo)[0].techName)
+                                    localStorage.setItem('position',Object.values(empInfo)[0].position)
+                                    localStorage.setItem('section',Object.values(empInfo)[0].section)
+                                    localStorage.setItem('staffId',Object.values(empInfo)[0].staffId)
+                                    localStorage.setItem('display_url',Object.values(empInfo)[0].display_url)
+                                    localStorage.setItem('key',Object.keys(empInfo)[0])
+                                    var checkAutho = await check_authorize()
+                                    countJob(Object.values(empInfo)[0].section)
+                                    getdata(Object.values(empInfo)[0].section)
+                                    if(Object.values(empInfo)[0].staffId == '500290'){$('#admin_menu').show()}
+                                    $('#empName').html(Object.values(empInfo)[0].techName)
+                                    var section = {'cn':'แผนกก่อสร้าง','cs':'แผนกบริการลูกค้า','om':'แผนกปฏิบัติการ'}
+                                    $('#empsecTion').html(section[Object.values(empInfo)[0].section])
+                                  }
+                                  $.unblockUI()
+                                }
+    })
+}
+///////////////////////
 
 
 function querybook()
