@@ -2,7 +2,7 @@ querybook()
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
 var chennelId = '1655539437'
 var clientId = 'd33ca1001671884fad04435cd62bd765'
-var callBackurl = 'https://thebooker.herokuapp.com'
+var callBackurl = 'https://thebooker.herokuapp.com?action=home'
 if(!getUrlVars()["code"])
 {
   window.location.href= 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + chennelId + '&redirect_uri=' + callBackurl + '&state=12345abcd&scope=openid%20profile'
