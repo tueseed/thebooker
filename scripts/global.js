@@ -22,7 +22,7 @@ function processLogin()
   {
     window.location.href= 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + chennelId + '&redirect_uri=' + callBackurl + '&state=12345abcd&scope=openid%20profile'
   }
-  else if(ocalStorage.getItem('name') != null)
+  else if(localStorage.getItem('name') != null)
   {
     var code = getUrlVars()["code"]//ตัวแปร code จะได้มาก็ต่อเมื่อ Login ผ่านแล้ว เอาค่าของตัวแปร code ไปแลกข้อมูล
     $.ajax({
