@@ -18,11 +18,11 @@ function processLogin()
   var chennelId = '1655539437'
   var clientId = 'd33ca1001671884fad04435cd62bd765'
   var callBackurl = 'https://thebooker.herokuapp.com?action=home'
-  if(localStorage.getItem('name') === null)
+  if(sessionStorage.getItem('name') === null)
   {
     window.location.href= 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + chennelId + '&redirect_uri=' + callBackurl + '&state=12345abcd&scope=openid%20profile'
   }
-  else if(localStorage.getItem('name') !== null)
+  else if(sessionStorage.getItem('name') !== null)
   {
     var code = getUrlVars()["code"]//ตัวแปร code จะได้มาก็ต่อเมื่อ Login ผ่านแล้ว เอาค่าของตัวแปร code ไปแลกข้อมูล
     $.ajax({
@@ -52,11 +52,11 @@ function processLogin()
                                                 var id_token = response.id_token
                                                 var base64 = id_token.split('.')[1]
                                                 var profile = await JSON.parse(window.atob(base64))
-                                                localStorage.setItem('name',profile.name)
-                                                localStorage.setItem('display_url',profile.picture)
-                                                localStorage.setItem('userId',profile.sub)
+                                                sessionStorage.setItem('name',profile.name)
+                                                sessionStorage.setItem('display_url',profile.picture)
+                                                sessionStorage.setItem('userId',profile.sub)
                                                 $('#userName').html(profile.name)
-                                                $('#userPicture').attr('src',localStorage.getItem('display_url'))
+                                                $('#userPicture').attr('src',sessionStorage.getItem('display_url'))
                                                 checkregis()
                                                 // var ckeckResult = await checkregis(profile.sub)
                                                 // var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
@@ -93,7 +93,7 @@ async function checkregis(uid)
 {
   var formData = new FormData()
   formData.append('command','checkregis')
-  formData.append('uid',localStorage.getItem('userId'))
+  formData.append('uid',sessionStorage.getItem('userId'))
   $.ajax({
             url: 'api/member_api.php',
             method: 'POST',
