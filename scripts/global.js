@@ -10,6 +10,9 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+querybook()
+processLogin()
+
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
 function processLogin()
 {
