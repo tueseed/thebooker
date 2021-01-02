@@ -12,7 +12,7 @@ $(document).ready(
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
 function processLogin()
 {
-  console('B')
+  console.log('B')
   var chennelId = '1655539437'
   var clientId = 'd33ca1001671884fad04435cd62bd765'
   var callBackurl = 'https://thebooker.herokuapp.com?action=home'
