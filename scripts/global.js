@@ -18,11 +18,11 @@ function processLogin()
   var chennelId = '1655539437'
   var clientId = 'd33ca1001671884fad04435cd62bd765'
   var callBackurl = 'https://thebooker.herokuapp.com?action=home'
-  if(sessionStorage.getItem('name') === null)
+  if(!sessionStorage.getItem('name'))
   {
     window.location.href= 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + chennelId + '&redirect_uri=' + callBackurl + '&state=12345abcd&scope=openid%20profile'
   }
-  else if(sessionStorage.getItem('name') !== null)
+  else if(sessionStorage.getItem('name'))
   {
     var code = getUrlVars()["code"]//ตัวแปร code จะได้มาก็ต่อเมื่อ Login ผ่านแล้ว เอาค่าของตัวแปร code ไปแลกข้อมูล
     $.ajax({
