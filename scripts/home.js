@@ -1,5 +1,6 @@
 $(document).ready(
                 function(){
+                            console.log("A")
                             querybook()
                             processLogin()
                           }
@@ -54,7 +55,7 @@ function processLogin()
                                                 // $('#userDropdown').show()
                                                 $('#user_logged').html(profile.name)
                                                 // $('#userPicture').attr('src',localStorage.getItem('display_url'))
-                                                console.log(profile)
+                                                console.log('B')
                                                 // var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
                                                 // var empInfo = checkEmp.val()
                                                 // if(checkEmp.val() == null)
