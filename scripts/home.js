@@ -1,4 +1,4 @@
-$(window).load(
+$(document).ready(
                 function(){
                             querybook()
                             processLogin()
