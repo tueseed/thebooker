@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/effect.css">
     <link rel="stylesheet" href="./assets/css/sidemenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
-    <link rel="icon" href="./pic/logo-auc.png" type="image/gif" sizes="64x64">
+    <!-- <link rel="icon" href="./pic/logo-auc.png" type="image/gif" sizes="64x64"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 
