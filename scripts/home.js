@@ -12,6 +12,7 @@ $(document).ready(
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
 function processLogin()
 {
+  console('B')
   var chennelId = '1655539437'
   var clientId = 'd33ca1001671884fad04435cd62bd765'
   var callBackurl = 'https://thebooker.herokuapp.com?action=home'
@@ -55,7 +56,7 @@ function processLogin()
                                                 // $('#userDropdown').show()
                                                 $('#user_logged').html(profile.name)
                                                 $('#userPicture').attr('src',localStorage.getItem('display_url'))
-                                                console.log('B')
+                                                console.log('C')
                                                 // var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
                                                 // var empInfo = checkEmp.val()
                                                 // if(checkEmp.val() == null)
