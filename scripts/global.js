@@ -1,4 +1,5 @@
 
+setUserdata()
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -9,6 +10,13 @@ function getUrlVars() {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+function setUserdata()
+{
+    $('#userName').html(sessionStorage.getItem('name'))
+    $('#userPicture').attr('src',sessionStorage.getItem('display_url'))
+}
+
 
 
 
