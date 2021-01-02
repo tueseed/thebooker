@@ -1,5 +1,5 @@
 querybook()
-////////////////Line Login////////////////////
+////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
 var chennelId = '1655539437'
 var clientId = 'd33ca1001671884fad04435cd62bd765'
 var callBackurl = 'https://thebooker.herokuapp.com'
@@ -9,7 +9,7 @@ if(!getUrlVars()["code"])
 }
 else if(getUrlVars()["code"])
 {
-  var code = getUrlVars()["code"]
+  var code = getUrlVars()["code"]//ตัวแปร code จะได้มาก็ต่อเมื่อ Login ผ่านแล้ว เอาค่าของตัวแปร code ไปแลกข้อมูล
   $.ajax({
     async: true,
     crossDomain: true,
@@ -30,7 +30,7 @@ else if(getUrlVars()["code"])
                 400:function()
                     {
                       console.log('400')
-                      window.location.href = 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1654004533&redirect_uri=https://cscn.herokuapp.com&state=12345abcd&scope=openid'
+                      window.location.href= 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + chennelId + '&redirect_uri=' + callBackurl + '&state=12345abcd&scope=openid%20profile'
                     }
                },
     success: async function(response) {
@@ -40,37 +40,37 @@ else if(getUrlVars()["code"])
                                   localStorage.setItem('name',profile.name)
                                   localStorage.setItem('display_url',profile.picture)
                                   localStorage.setItem('userId',profile.sub)
-                                  $('#userDropdown').show()
-                                  $('#userName').html(profile.name)
+                                  // $('#userDropdown').show()
+                                  $('#user_logged').html(profile.name)
                                   $('#userPicture').attr('src',profile.picture)
-                                  var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
-                                  var empInfo = checkEmp.val()
-                                  if(checkEmp.val() == null)
-                                  {
-                                      window.location.href = 'index.php?action=emp_regis'
-                                  }
-                                  else if(checkEmp.val() !== null)
-                                  {
-                                    localStorage.setItem('userId',Object.values(empInfo)[0].uid)
-                                    localStorage.setItem('name',Object.values(empInfo)[0].techName)
-                                    localStorage.setItem('position',Object.values(empInfo)[0].position)
-                                    localStorage.setItem('section',Object.values(empInfo)[0].section)
-                                    localStorage.setItem('staffId',Object.values(empInfo)[0].staffId)
-                                    localStorage.setItem('display_url',Object.values(empInfo)[0].display_url)
-                                    localStorage.setItem('key',Object.keys(empInfo)[0])
-                                    var checkAutho = await check_authorize()
-                                    countJob(Object.values(empInfo)[0].section)
-                                    getdata(Object.values(empInfo)[0].section)
-                                    if(Object.values(empInfo)[0].staffId == '500290'){$('#admin_menu').show()}
-                                    $('#empName').html(Object.values(empInfo)[0].techName)
-                                    var section = {'cn':'แผนกก่อสร้าง','cs':'แผนกบริการลูกค้า','om':'แผนกปฏิบัติการ'}
-                                    $('#empsecTion').html(section[Object.values(empInfo)[0].section])
-                                  }
-                                  $.unblockUI()
+                                  // var checkEmp = await emp.orderByChild('uid').equalTo(profile.sub).once('value')
+                                  // var empInfo = checkEmp.val()
+                                  // if(checkEmp.val() == null)
+                                  // {
+                                      window.location.href = 'index.php?action=home'
+                                  // }
+                                  // else if(checkEmp.val() !== null)
+                                  // {
+                                  //   localStorage.setItem('userId',Object.values(empInfo)[0].uid)
+                                  //   localStorage.setItem('name',Object.values(empInfo)[0].techName)
+                                  //   localStorage.setItem('position',Object.values(empInfo)[0].position)
+                                  //   localStorage.setItem('section',Object.values(empInfo)[0].section)
+                                  //   localStorage.setItem('staffId',Object.values(empInfo)[0].staffId)
+                                  //   localStorage.setItem('display_url',Object.values(empInfo)[0].display_url)
+                                  //   localStorage.setItem('key',Object.keys(empInfo)[0])
+                                  //   var checkAutho = await check_authorize()
+                                  //   countJob(Object.values(empInfo)[0].section)
+                                  //   getdata(Object.values(empInfo)[0].section)
+                                  //   if(Object.values(empInfo)[0].staffId == '500290'){$('#admin_menu').show()}
+                                  //   $('#empName').html(Object.values(empInfo)[0].techName)
+                                  //   var section = {'cn':'แผนกก่อสร้าง','cs':'แผนกบริการลูกค้า','om':'แผนกปฏิบัติการ'}
+                                  //   $('#empsecTion').html(section[Object.values(empInfo)[0].section])
+                                  // }
+                                  // $.unblockUI()
                                 }
     })
 }
-///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function querybook()
