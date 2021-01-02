@@ -37,10 +37,10 @@
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                 <span class="header text-dark font-weight-bold text-center" id="user_logged">
                   <span class="text-white" id="userName">ยังไม่ได้เข้าสู่ระบบ</span>
-                  <div class="item">
+                  <span class="item">
                     <span class="notify-badge" id="notifyNumber"></span>
                     <img class="shadow-sm" src="" id="userPicture" style="width:50px;height:50px;border-radius:50px 50px;"/>
-                </div>
+                  </span>
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right justify-content-center">
