@@ -37,7 +37,7 @@
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
               <span class="header text-white font-weight-bold text-center" id="user_logged">
                 ยังไม่ได้เข้าสู่ระบบ
-                <img src="" id="imguser" width="75" height="50">
+                <img class="shadow-sm" src="" id="userPicture" style="width:50px;height:50px;border-radius:50px 50px;"/>
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right justify-content-center">
