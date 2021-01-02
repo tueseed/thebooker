@@ -4,7 +4,10 @@
     if($cmd == 'checkregis')
     {
         $uid = $_POST["uid"];
-        echo $uid;
+        $querychecktext = "SELECT * FROM tbl_member WHERE uid ='$uid'";
+        $result = mysqli_query($conn,$querychecktext);
+        $num = mysqli_num_rows($result);
+        echo $num;
     }
 
 
