@@ -50,6 +50,14 @@ function querybook()
 
 function makebookcard(bookdetail)
 {
+  if(bookdetail.status == '0')
+  {
+    var bookstatustext = '<span class="card-text text-success">ว่าง</span>'
+  }
+  else if(bookdetail.status == '1')
+  {
+    var bookstatustext = '<span class="card-text text-danger">ไม่ว่าง</span>'
+  }
   return[
     '<div class="col-lg-5 mt-3">',
     '<a class="card nav-link shadow" href="?action=bookdetail&bookid=' + bookdetail.bookid + '">',
@@ -61,7 +69,7 @@ function makebookcard(bookdetail)
             '<h5 class="card-title">ชื่อหนังสือ : ' + bookdetail.bookname + '</h4>',
             '<p class="card-texts">ผู้เขียน : ' + bookdetail.writer + '</p>',
             '<p class="card-text">หมวดหมู่ : ' + bookdetail.category + '</p>',
-            '<p class="card-text">สถานะ : ' + bookdetail.status+ '</p>',
+            '<p class="card-text">สถานะ : ' + bookstatustext+ '</p>',
             '<p class="card-text">กำหนดคืน : ' +bookdetail.datereturn + '</p>',
         '</div>',
       '</div>',

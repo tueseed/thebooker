@@ -43,9 +43,10 @@
         $category = $_POST["category"];
         $coverurl = $_POST["coverurl"];
         $description = $_POST["description"];
-        $queryallbook = "UPDATE tbl_book SET bookname = '$bookname' WHERE bookid='$bookid'";
+        $forrent = $_POST["rentselect"];
+        $queryallbook = "UPDATE tbl_book SET bookname = '$bookname',writer='$writer',category='$category',coverimage='$coverurl',descript='$description',forrent='$forrent' WHERE bookid='$bookid'";
         mysqli_query($conn,$queryallbook);
-        echo 'Edited';
+        echo $queryallbook;
     }
     
 ?>

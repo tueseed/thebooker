@@ -1,4 +1,28 @@
 querybookdetail()
+
+function reqpicurl()
+{
+    if($('#bookcoverimage').length == 0)
+    {
+        $('#bookcover').attr('src','images/bookcover.jpg')
+    }
+    $('#bookcover').attr('src',$('#bookcoverimage').val())
+}
+function imgError(image) {
+    image.onerror = " ";
+    image.src = "images/bookcover.jpg";
+    return true;
+}
+//-----------ตรวจสอบการกด Spacebar เพื่อใส่เครื่องหมาย , --------//
+$('#category').keypress(function(e) {
+    if (e.which === 32) {
+                            var cateInput = $('#category').val()  
+                            $('#category').val(cateInput+',')
+    }
+    var cateInput1 = $('#category').val() 
+    $('#category').val(cateInput1.split(' ').join(''))
+})
+
 function querybookdetail()
 {
     var bookid =getUrlVars()["bookid"]
@@ -30,11 +54,19 @@ function querybookdetail()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
+                    if(obj[0].status == '0')
+                    {
+                        var bookstatustext = 'ว่าง'
+                    }
+                    else if(obj[0].status == '1')
+                    {
+                        var bookstatustext = 'ไม่ว่าง'
+                    }
                     $('#bookname').val(obj[0].bookname)
                     $('#writer').val(obj[0].writer)
                     $('#category').val(obj[0].category)
                     $('#bookcoverimage').val(obj[0].coverimage)
-                    $('#status').val(obj[0].status)
+                    $('#status').val(bookstatustext)
                     $('#rentselect').val(obj[0].forrent)
                     $('#bookdescription').val(obj[0].descript)
                     $('#bookcover').attr('src',obj[0].coverimage)
@@ -71,6 +103,7 @@ function editbook()
         formData.append('category',$('#category').val())
         formData.append('coverurl',$('#bookcoverimage').val())
         formData.append('description',$('#bookdescription').val())
+        formData.append('rentselect',$('#rentselect').val())
         $.ajax({
                     url: 'api/api_book_all.php',
                     method: 'POST',
