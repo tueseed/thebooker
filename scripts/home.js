@@ -112,15 +112,15 @@ async function checkregis(uid)
             },
             success: function(response) 
             {
-                // if(response == 0)
-                // {
-                //   // window.location.href = 'index.php?action=regis'
-                // }
-                // else if(response == 1)
-                // {
-                //   // window.location.href = 'index.php?action=home'
-                // } 
-                console.log(response)   
+                if(response == 0)
+                {
+                  // window.location.href = 'index.php?action=regis'
+                }
+                else if(response == 1)
+                {
+                  // window.location.href = 'index.php?action=home'
+                } 
+                // console.log(response)   
             },
             complete :function()
             {
