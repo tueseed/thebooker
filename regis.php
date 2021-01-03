@@ -18,6 +18,6 @@
             <label for="telInput" class="font-weight-bold text-success"><i class="fa fa-address-card"></i> รหัสนักเรียน/รหัสพนักงาน</label>
             <input type="text" class="form-control" id="staffId"  >
         </div>
-        <button type="ิbutton" class="btn btn-primary" onclick="regis_emp()">ส่งข้อมูล</button>
+        <button type="ิbutton" class="btn btn-primary" onclick="regis_member()">ส่งข้อมูล</button>
     </div>
 </div>
