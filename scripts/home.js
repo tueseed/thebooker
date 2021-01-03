@@ -96,20 +96,6 @@ async function checkregis(uid)
             cache: false,
             processData: false,
             contentType: false,
-            beforeSend : function()
-            {  
-                // $('#showbook').block({
-                //                         message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',
-                //                         overlayCSS : { 
-                //                                         backgroundColor: '#ffffff',
-                //                                         opacity: 1
-                //                                     },
-                //                         css : {
-                //                             opacity: 1,
-                //                             border: 'none',
-                //                         }
-                //                         })
-            },
             success: function(response) 
             {
                 if(response == 0)
@@ -120,18 +106,9 @@ async function checkregis(uid)
                 {
                   window.location.href = 'index.php?action=home'
                 } 
-                // console.log(response)   
-            },
-            complete :function()
-            {
-                // $('#showbook').unblock()    
-            }					
+            }				
         })
 }
-
-
-
-
 
 //////////////////////////ฟังก์ชั่นแสดงหนังสือที่หน้าแรก/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function querybook()
