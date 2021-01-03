@@ -1,12 +1,12 @@
 $(document).ready(
                 function(){
-                            processLogin()
+                            await processLogin()
                             querybook()
                           }
 )
 
 ////////////////Line Login///////////////////////////////////////////////////////////////////////////////////////////
-function processLogin()
+async function processLogin()
 {
   var chennelId = '1655539437'
   var clientId = 'd33ca1001671884fad04435cd62bd765'
