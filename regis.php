@@ -7,15 +7,15 @@
 <div class="row text-center">
     <div class="col-lg-4 offset-lg-4">
         <div class="form-group">
-            <label for="nameInput" class="font-weight-bold text-white"><i class="fas fa-user-edit"></i> ชื่อ - นามสกุล</label>
+            <label for="nameInput" class="font-weight-bold text-success"><i class="fas fa-user-edit"></i> ชื่อ - นามสกุล</label>
             <input type="text" class="form-control" id="membername"  >
         </div>
         <div class="form-group">
-            <label for="telInput" class="font-weight-bold text-white"><i class="fa fa-address-card"></i> ชั้นเรียน/หน่วยงาน</label>
+            <label for="telInput" class="font-weight-bold text-success"><i class="fa fa-address-card"></i> ชั้นเรียน/หน่วยงาน</label>
             <input type="text" class="form-control" id="position" name="position" placeholder="กรอกตำแหน่ง/สังกัด" required>
         </div>
         <div class="form-group">
-            <label for="telInput" class="font-weight-bold text-white"><i class="fa fa-address-card"></i> รหัสนักเรียน/รหัสพนักงาน</label>
+            <label for="telInput" class="font-weight-bold text-success"><i class="fa fa-address-card"></i> รหัสนักเรียน/รหัสพนักงาน</label>
             <input type="text" class="form-control" id="staffId" name="staffId" placeholder="กรอกรหัสพนักงาน" required>
         </div>
         <button type="ิbutton" class="btn btn-primary" onclick="regis_emp()">ส่งข้อมูล</button>
