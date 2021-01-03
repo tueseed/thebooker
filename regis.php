@@ -12,11 +12,11 @@
         </div>
         <div class="form-group">
             <label for="telInput" class="font-weight-bold text-success"><i class="fa fa-address-card"></i> ชั้นเรียน/หน่วยงาน</label>
-            <input type="text" class="form-control" id="position" name="position" placeholder="กรอกตำแหน่ง/สังกัด" required>
+            <input type="text" class="form-control" id="classroomOffice" >
         </div>
         <div class="form-group">
             <label for="telInput" class="font-weight-bold text-success"><i class="fa fa-address-card"></i> รหัสนักเรียน/รหัสพนักงาน</label>
-            <input type="text" class="form-control" id="staffId" name="staffId" placeholder="กรอกรหัสพนักงาน" required>
+            <input type="text" class="form-control" id="staffId"  >
         </div>
         <button type="ิbutton" class="btn btn-primary" onclick="regis_emp()">ส่งข้อมูล</button>
     </div>
