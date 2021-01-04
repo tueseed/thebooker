@@ -12,7 +12,7 @@
     {
         $uid = $_POST["uid"];
         $membername = $_POST["name"];
-        $classroom = $_POST["class"];
+        $classroom = $_POST["classroom"];
         $numberid = $_POST["memberid"];
         $querytextadd = "INSERT INTO tbl_member(lineuid,membername,class,memberid,levelaccount,accountstatus) VALUES('$uid','$membername','$classroom','$memberid','0','0')";
         mysqli_query($conn,$querytextadd);
