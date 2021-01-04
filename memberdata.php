@@ -21,11 +21,11 @@
             data-page-size="5">
             <thead>
               <tr>
-              <th data-field="membername" data-sortable="true" data-formatter="job_detail">#</th> 
+              <th data-field="membername" data-sortable="true" data-formatter="textCenterFormatter">#</th> 
               <th data-field="class" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> WBS</th>
               <th data-field="memberid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> สถานะล่าสุด</th>
               <th data-field="levelaccount" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> คำอธิบาย</th>
-              <th data-field="accountstatus" data-sortable="true" data-formatter="text_user_sts"><i class="fas fa-user"></i> สถานะผู้ใช้</th>
+              <th data-field="accountstatus" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะผู้ใช้</th>
             </tr>
             </thead>
           </table>
