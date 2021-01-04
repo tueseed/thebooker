@@ -43,12 +43,12 @@ function regis_member()
             },
             complete :function()
             {
-                $('#cardaddbook').unblock()
-                Swal.fire({
-                    title: "เพิ่มข้อมูลหนังสือสำเร็จ",
-                    type: 'success'
+                // $('#cardaddbook').unblock()
+                // Swal.fire({
+                //     title: "เพิ่มข้อมูลหนังสือสำเร็จ",
+                //     type: 'success'
                     
-                  }).then(location.reload() ) 
+                //   }).then(location.reload() ) 
                    
             }					
         });
