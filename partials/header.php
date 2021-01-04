@@ -48,7 +48,11 @@
                   <span id = "DepartmentFullName"></span>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="?action=bookadd" name="admin_menu1" id="admin_menu1">
+                <a class="dropdown-item" href="?action=memberdata" name="admin_menu1" id="admin_menu_memberdata">
+                  <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
+                  จัดการข้อมูลสมาชิก
+                </a>
+                <a class="dropdown-item" href="?action=bookadd" name="admin_menu1" id="admin_menu_addbook">
                   <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
                   เพิ่มข้อมูลหนังสือ
                 </a>
