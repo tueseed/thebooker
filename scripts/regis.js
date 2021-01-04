@@ -2,10 +2,10 @@ function regis_member()
 {
     var formData = new FormData()
     formData.append('command','regis')
-    formData.append('uid',$('#bookname').val())
-    formData.append('name',$('#writer').val())
-    formData.append('class',$('#category').val())
-    formData.append('number',$('#bookcoverimage').val())
+    formData.append('uid',sessionStorage.getItem('userId'))
+    formData.append('name',$('#membername').val())
+    formData.append('classroom',$('#classroomOffice').val())
+    formData.append('memberid',$('#staffId').val())
     $.ajax({
             url: 'api/member_api.php',
             method: 'POST',
