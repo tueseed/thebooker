@@ -8,6 +8,9 @@
         $result = mysqli_query($conn,$querychecktext);
         $num = mysqli_num_rows($result);
         echo $num;
+    }else if($cmd == 'regis')
+    {
+        echo 'registed';
     }
 
 
