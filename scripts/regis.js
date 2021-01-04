@@ -7,7 +7,7 @@ function regis_member()
     formData.append('class',$('#category').val())
     formData.append('number',$('#bookcoverimage').val())
     $.ajax({
-            url: 'api/member_all.php',
+            url: 'api/member_api.php',
             method: 'POST',
             data:formData,
             async: true,
