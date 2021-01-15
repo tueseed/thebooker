@@ -26,7 +26,7 @@
               <th data-field="memberid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> รหัสนักรียน/รหัสพนักงาน</th>
               <th data-field="levelaccount" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> ประเภทบัญชี</th>
               <th data-field="accountstatus" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะบัญชี</th>
-              <th data-field="accountstatus" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
+              <th data-field="lineuid" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
             </tr>
             </thead>
           </table>
@@ -50,10 +50,12 @@
           <div class="row">
             <div class="col-md-12">
               <input type="hidden" id="dataId">
-              <input type="text" class="form-control mt-1" id="nameEditmodal"   placeholder="ชื่อ-นามสกุล" > 
-              <textarea id="addrEditmodal" class="form-control mt-1"  placeholder="ที่อยู่" rows="3" cols="20"  ></textarea> 
-              <input type="text" class="form-control mt-1" id="postcodeEditmodal" maxlength="5" placeholder="รหัสไปรษณีย์" >
-              <select class="form-control mt-1" id="groupSeleditJobmodal">
+              <input type="text" class="form-control mt-1" id="nameEditmodal"   placeholder="ชื่อ-นามสกุล" >
+              <input type="text" class="form-control mt-1" id="classroomEditmodal" placeholder="ชั้นเรียน/หน่วยงาน" >
+              <select class="form-control mt-1" id="acctypeeditJobmodal">
+              <!--  -->
+              </select>
+              <select class="form-control mt-1" id="accstatuseditJobmodal">
               <!--  -->
               </select>
             </div>
