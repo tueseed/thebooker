@@ -21,7 +21,7 @@
     {
         $uid = $_POST["uid"];
         $querymember = "SELECT * FROM tbl_member";
-        $query = mysqli_query($conn,$queryallbook);
+        $query = mysqli_query($conn,$querymember);
         $data = array();
         while($obj = mysqli_fetch_assoc($query))
         {
