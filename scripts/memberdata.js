@@ -29,14 +29,9 @@ function editdata(value, row, index)
             success: function(response) 
             {
                 var obj = JSON.parse(response)
-                // var j =0;
-                // while(obj[j])
-                // {
-                //     render_tech_card(obj[j])
-                //     j++;
-                // }
-                
-                console.log(obj[0].membername)
+                $('#nameEditmodal').val(obj[0].membername)
+                $('#classroomEditmodal').val(obj[0].membername)
+                console.log(obj)
                    
             }				
         });
