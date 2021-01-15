@@ -35,6 +35,43 @@
     </div>
     </div>
 
+    <div class='modal fade' tabindex='-1' role='dialog' id='member_detail'>
+  <div class='modal-dialog modal-md' role='document' >
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h5 class='modal-title font-weight-bold' id="head_modal">
+          แก้ไขข้อมูล <span id="editId"></span>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class='modal-body'>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="hidden" id="dataId">
+              <input type="text" class="form-control mt-1" id="nameEditmodal"   placeholder="ชื่อ-นามสกุล" > 
+              <textarea id="addrEditmodal" class="form-control mt-1"  placeholder="ที่อยู่" rows="3" cols="20"  ></textarea> 
+              <input type="text" class="form-control mt-1" id="postcodeEditmodal" maxlength="5" placeholder="รหัสไปรษณีย์" >
+              <select class="form-control mt-1" id="groupSeleditJobmodal">
+              <!--  -->
+              </select>
+            </div>
+          </div>
+      </div> <div class="modal-footer">
+      <button class="btn btn-danger mr-auto"  id="save_btn" value="del" onclick="delDatafn(this.value)" style="border-radius:50px 50px;">
+          <i class="fas fa-save" aria-hidden="true"></i>
+          ลบ
+        </button>
+        <button class="btn btn-outline-primary"  id="save_btn" value="edit" onclick="editDatafn(this.value)" style="border-radius:50px 50px;">
+          <i class="fas fa-save" aria-hidden="true"></i>
+          บันทึก
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
