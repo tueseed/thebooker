@@ -53,10 +53,12 @@
               <input type="text" class="form-control mt-1" id="nameEditmodal"   placeholder="ชื่อ-นามสกุล" >
               <input type="text" class="form-control mt-1" id="classroomEditmodal" placeholder="ชั้นเรียน/หน่วยงาน" >
               <select class="form-control mt-1" id="acctypeeditJobmodal">
-              <!--  -->
+                <option value="0">ประเภทผู้ใช้งาน : ทั่วไป</option>
+                <option value="1">ประเภทผู้ใช้งาน : ผู้ดูแล</option>
               </select>
               <select class="form-control mt-1" id="accstatuseditJobmodal">
-              <!--  -->
+                <option value="0">สถานะบัญชี : ปกติ</option>
+                <option value="1">สถานะบัญชี : ระงับ/ยังไม่เปิดใช้งาน</option>
               </select>
             </div>
           </div>

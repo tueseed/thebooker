@@ -31,6 +31,8 @@ function editdata(value, row, index)
                 var obj = JSON.parse(response)
                 $('#nameEditmodal').val(obj[0].membername)
                 $('#classroomEditmodal').val(obj[0].membername)
+                $('#acctypeeditJobmodal').val(obj[0].membername)
+                $('#accstatuseditJobmodal').val(obj[0].membername)
                 console.log(obj)
                    
             }				
