@@ -28,7 +28,7 @@ function editdata(value, row, index)
             contentType: false,
             success: function(response) 
             {
-                // var obj = JSON.parse(response)
+                var obj = JSON.parse(response)
                 // var j =0;
                 // while(obj[j])
                 // {
@@ -36,7 +36,7 @@ function editdata(value, row, index)
                 //     j++;
                 // }
                 // console.log(obj)
-                console.log(response)
+                console.log(obj)
                 // location.reload()      
             },
             complete :function()
