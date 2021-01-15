@@ -35,19 +35,9 @@ function editdata(value, row, index)
                 //     render_tech_card(obj[j])
                 //     j++;
                 // }
-                // console.log(obj)
-                console.log(obj)
-                // location.reload()      
-            },
-            complete :function()
-            {
-                // $('#cardaddbook').unblock()
-                // Swal.fire({
-                //     title: "เพิ่มข้อมูลหนังสือสำเร็จ",
-                //     type: 'success'
-                    
-                //   }).then(location.reload() ) 
+                
+                console.log(obj[0].membername)
                    
-            }					
+            }				
         });
   }
