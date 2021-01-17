@@ -38,3 +38,8 @@ function editdata(value, row, index)
             }				
         });
   }
+
+  function editDatafn()
+  {
+    console.log('mcnkdlavjdpbiu')
+  }
