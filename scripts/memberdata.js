@@ -29,12 +29,12 @@ function query_member(lineuid)
             success: function(response) 
             {
                 var obj = JSON.parse(response)
-                $('#nameEditmodal').val(obj[0].membername)
-                $('#staffnumberEditmodal').val(obj[0].memberid)
-                $('#classroomEditmodal').val(obj[0].class)
-                $('#acctypeeditJobmodal').val(obj[0].levelaccount)
-                $('#accstatuseditJobmodal').val(obj[0].accountstatus)
-                $('#editId').html(obj[0].lineuid)
+                $('#membername').val(obj[0].membername)
+                $('#staffnumber').val(obj[0].memberid)
+                $('#classroom').val(obj[0].class)
+                $('#acctype').val(obj[0].levelaccount)
+                $('#accstatus').val(obj[0].accountstatus)
+                $('#lineuid').val(obj[0].lineuid)
                 console.log(obj)
                    
             }				
@@ -43,14 +43,14 @@ function query_member(lineuid)
 
   function editDatafn()
   {
-    console.log('mcnkdlavjdpbiu')
     var formData = new FormData()
     formData.append('command','editdatamember')
-    formData.append('uid',lineuid)
-    formData.append('uid',lineuid)
-    formData.append('uid',lineuid)
-    formData.append('uid',lineuid)
-    formData.append('uid',lineuid)
+    formData.append('uid',$('#lineuid').val())
+    formData.append('membername',$('#membername').val())
+    formData.append('memberid',$('#staffnumber').val())
+    formData.append('classroom',$('#classroom').val())
+    formData.append('acctype',$('#acctype').val())
+    formData.append('accstatus',$('#accstatus').val())
     $.ajax({
             url: 'api/member_api.php',
             method: 'POST',
@@ -61,12 +61,12 @@ function query_member(lineuid)
             contentType: false,
             success: function(response) 
             {
-                var obj = JSON.parse(response)
-                $('#nameEditmodal').val(obj[0].membername)
-                $('#classroomEditmodal').val(obj[0].class)
-                $('#acctypeeditJobmodal').val(obj[0].levelaccount)
-                $('#accstatuseditJobmodal').val(obj[0].accountstatus)
-                console.log(obj)
+                // var obj = JSON.parse(response)
+                // $('#nameEditmodal').val(obj[0].membername)
+                // $('#classroomEditmodal').val(obj[0].class)
+                // $('#acctypeeditJobmodal').val(obj[0].levelaccount)
+                // $('#accstatuseditJobmodal').val(obj[0].accountstatus)
+                console.log(response)
                    
             }				
         });

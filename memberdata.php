@@ -50,14 +50,14 @@
           <div class="row">
             <div class="col-md-12">
               <input type="hidden" id="lineuid">
-              <input type="text" class="form-control mt-1" id="staffnumberEditmodal" placeholder="รหัสประจำตัว" >
-              <input type="text" class="form-control mt-1" id="nameEditmodal"   placeholder="ชื่อ-นามสกุล" >
-              <input type="text" class="form-control mt-1" id="classroomEditmodal" placeholder="ชั้นเรียน/หน่วยงาน" >
-              <select class="form-control mt-1" id="acctypeeditJobmodal">
+              <input type="text" class="form-control mt-1" id="staffnumber" placeholder="รหัสประจำตัว" >
+              <input type="text" class="form-control mt-1" id="membername"   placeholder="ชื่อ-นามสกุล" >
+              <input type="text" class="form-control mt-1" id="classroom" placeholder="ชั้นเรียน/หน่วยงาน" >
+              <select class="form-control mt-1" id="acctype">
                 <option value="0">ประเภทผู้ใช้งาน : ทั่วไป</option>
                 <option value="1">ประเภทผู้ใช้งาน : ผู้ดูแล</option>
               </select>
-              <select class="form-control mt-1" id="accstatuseditJobmodal">
+              <select class="form-control mt-1" id="accstatus">
                 <option value="0">สถานะบัญชี : ปกติ</option>
                 <option value="1">สถานะบัญชี : ระงับ/ยังไม่เปิดใช้งาน</option>
               </select>

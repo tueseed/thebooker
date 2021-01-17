@@ -31,7 +31,12 @@
     }else if($cmd == 'editdatamember')
     {
         $uid = $_POST["uid"];
-        
+        $membername = $_POST["membername"];
+        $memberid = $_POST["memberid"];
+        $classroom = $_POST["classroom"];
+        $acctype = $_POST["acctype"];
+        $accstatus = $_POST["accstatus"];
+        echo 'edited';
     }
 
 
