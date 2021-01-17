@@ -12,13 +12,13 @@ function editdata(value, row, index)
     ].join("")
   }
 
-  function query_member(lineuid)
-  {
-    console.log(lineuid)
-    var formData = new FormData()
-    formData.append('command','queryedit')
-    formData.append('uid',lineuid)
-    $.ajax({
+function query_member(lineuid)
+{
+  console.log(lineuid)
+  var formData = new FormData()
+  formData.append('command','queryedit')
+  formData.append('uid',lineuid)
+  $.ajax({
             url: 'api/member_api.php',
             method: 'POST',
             data:formData,
@@ -34,6 +34,7 @@ function editdata(value, row, index)
                 $('#classroomEditmodal').val(obj[0].class)
                 $('#acctypeeditJobmodal').val(obj[0].levelaccount)
                 $('#accstatuseditJobmodal').val(obj[0].accountstatus)
+                $('#editId').val(obj[0].lineuid)
                 console.log(obj)
                    
             }				
@@ -45,6 +46,10 @@ function editdata(value, row, index)
     console.log('mcnkdlavjdpbiu')
     var formData = new FormData()
     formData.append('command','editdatamember')
+    formData.append('uid',lineuid)
+    formData.append('uid',lineuid)
+    formData.append('uid',lineuid)
+    formData.append('uid',lineuid)
     formData.append('uid',lineuid)
     $.ajax({
             url: 'api/member_api.php',
