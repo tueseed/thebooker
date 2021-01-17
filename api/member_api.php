@@ -37,6 +37,7 @@
         $acctype = $_POST["acctype"];
         $accstatus = $_POST["accstatus"];
         $queryupdate = "UPDATE tbl_member SET membername = '$membername',class = '$classroom',memberid = '$memberid',levelaccount = '$acctype',accountstatus = '$accstatus' WHERE lineuid = '$uid'";
+        mysqli_query($conn,$queryupdate);
         echo 'edited';
     }
 
