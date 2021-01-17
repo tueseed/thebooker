@@ -3,6 +3,21 @@ function textCenterFormatter(value, row, index)
   return "<div class='text-center'>" + value + "</div>";
 }
 
+function checkacctypefortbl(value, row, index)
+{
+  if(value == 0)
+  {
+    var acctype = "ทั่วไป"
+  }
+  else if(value == 1)
+  {
+    var acctype = "ผู้ดูแล"
+
+  }
+  return "<div class='text-center'>" + acctype + "</div>";
+}
+
+
 function editdata(value, row, index) 
 {
   return [
