@@ -34,7 +34,7 @@ function query_member(lineuid)
                 $('#classroomEditmodal').val(obj[0].class)
                 $('#acctypeeditJobmodal').val(obj[0].levelaccount)
                 $('#accstatuseditJobmodal').val(obj[0].accountstatus)
-                $('#editId').val(obj[0].lineuid)
+                $('#editId').html(obj[0].lineuid)
                 console.log(obj)
                    
             }				
