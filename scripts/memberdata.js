@@ -30,6 +30,7 @@ function editdata(value, row, index)
             {
                 var obj = JSON.parse(response)
                 $('#nameEditmodal').val(obj[0].membername)
+                $('#staffnumberEditmodal').val(obj[0].memberid)
                 $('#classroomEditmodal').val(obj[0].class)
                 $('#acctypeeditJobmodal').val(obj[0].levelaccount)
                 $('#accstatuseditJobmodal').val(obj[0].accountstatus)
@@ -42,4 +43,27 @@ function editdata(value, row, index)
   function editDatafn()
   {
     console.log('mcnkdlavjdpbiu')
+    var formData = new FormData()
+    formData.append('command','editdatamember')
+    formData.append('uid',lineuid)
+    $.ajax({
+            url: 'api/member_api.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(response) 
+            {
+                var obj = JSON.parse(response)
+                $('#nameEditmodal').val(obj[0].membername)
+                $('#classroomEditmodal').val(obj[0].class)
+                $('#acctypeeditJobmodal').val(obj[0].levelaccount)
+                $('#accstatuseditJobmodal').val(obj[0].accountstatus)
+                console.log(obj)
+                   
+            }				
+        });
+
   }

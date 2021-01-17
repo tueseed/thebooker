@@ -50,6 +50,7 @@
           <div class="row">
             <div class="col-md-12">
               <input type="hidden" id="dataId">
+              <input type="text" class="form-control mt-1" id="staffnumberEditmodal" placeholder="รหัสประจำตัว" >
               <input type="text" class="form-control mt-1" id="nameEditmodal"   placeholder="ชื่อ-นามสกุล" >
               <input type="text" class="form-control mt-1" id="classroomEditmodal" placeholder="ชั้นเรียน/หน่วยงาน" >
               <select class="form-control mt-1" id="acctypeeditJobmodal">

@@ -28,6 +28,10 @@
             array_push($data,$obj);
         }
         echo json_encode($data); 
+    }else if($cmd == 'editdatamember')
+    {
+        $uid = $_POST["uid"];
+        
     }
 
 
