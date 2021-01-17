@@ -17,6 +17,20 @@ function checkacctypefortbl(value, row, index)
   return "<div class='text-center'>" + acctype + "</div>";
 }
 
+function checkaccstatusfortbl(value, row, index)
+{
+  if(value == 0)
+  {
+    var acctype = "ปกติ"
+  }
+  else if(value == 1)
+  {
+    var acctype = "ถูกระงับ/ยังไม่เปิดใช้งาน"
+
+  }
+  return "<div class='text-center'>" + acctype + "</div>";
+}
+
 
 function editdata(value, row, index) 
 {
