@@ -1,4 +1,4 @@
-<div class="row">
+
   <div class="col-lg-12">
     <div class="row">
       <div class="input-group mb-3">
@@ -9,4 +9,3 @@
       </div>
     </div>
   </div>
-</div>
