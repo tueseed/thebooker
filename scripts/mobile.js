@@ -70,7 +70,7 @@ function makebookcard(bookdetail)
         '</div>',
         '<div class="card-body">',
             '<h5 class="card-title">ชื่อหนังสือ : ' + bookdetail.bookname + '</h4>',
-            '<p class="card-texts">ผู้เขียน : ' + bookdetail.writer + '</p>',
+            '<p class="card-text">ผู้เขียน : ' + bookdetail.writer + '</p>',
             '<p class="card-text">หมวดหมู่ : ' + bookdetail.category + '</p>',
             '<p class="card-text">สถานะ : ' + bookstatustext+ '</p>',
             '<p class="card-text">กำหนดคืน : ' +bookdetail.datereturn + '</p>',
