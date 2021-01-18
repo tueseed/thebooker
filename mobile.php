@@ -1,5 +1,5 @@
 
-  <div class="col-lg-12 mt-3">
+  <div class="col-lg-12 mt-3 mb-3">
     <div class="row">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
