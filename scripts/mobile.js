@@ -1,4 +1,9 @@
 $('#header').hide()
+$(document).ready(
+    function(){
+                querybook()
+              }
+)
 
 function querybook()
 {
