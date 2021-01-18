@@ -3,7 +3,8 @@
 <script src="./assets/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.js"></script>
 <script src="./assets/js/bootstrap-table-sticky-header.min.js"></script>
-<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<!-- <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script> -->
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script src="./assets/js/notify.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="./scripts/global.js"></script>
