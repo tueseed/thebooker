@@ -19,6 +19,12 @@ function setUserdata()
     $('#userPicture').attr('src',sessionStorage.getItem('display_url'))
 }
 
+function toggle_menu()
+{
+  document.getElementById('circularMenu').classList.toggle('active');
+//   quantity_service();
+}
+
 
 
 

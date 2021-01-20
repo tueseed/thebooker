@@ -5,7 +5,7 @@
     <menu class="items-wrapper" id="menu_item">
         <a href="#" class="menu-item fas fa-home"><span class="tooltiptext">หน้าหลัก</span></a>
         <a href="#" class="menu-item fas fa-user-tag"><span class="tooltiptext">ผู้ควบคุมงาน</span></a>
-        <a href="" class="menu-item fas fa-search"><span class="tooltiptext">ค้นหา</span></a>
+        <a href="#" class="menu-item fas fa-search"><span class="tooltiptext">ค้นหา</span></a>
         <a href="#" class="menu-item fas fa-cogs"><span class="tooltiptext">ผู้ดูแล</span></a>
     </menu>
 </div>
@@ -13,18 +13,20 @@
     /**/
     .tooltiptext {
         visibility: hidden;
-        width: 120px;
-        background-color: hsla(276, 40%, 41%,0.5);
-        color: #fff;
+        width: 100px;
+        /* background-color: hsla(276, 40%, 41%,0.5); */
+        color: #703E91;
         text-align: center;
         border-radius: 10px;
         
 
         /* Position the tooltip */
         position: absolute;
-        right: 40px;
-        bottom: 40px; 
+        right: 0px;
+        bottom: 45px; 
+        transform: rotate(45deg);
         }
+
     .circular-menu .menu-item:hover .tooltiptext {
   visibility: visible;
 
