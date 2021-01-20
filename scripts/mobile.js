@@ -73,7 +73,7 @@ function makebookcard(bookdetail)
   }
   return[
     '<div class="col-lg-5 mt-3">',
-    '<a class="card nav-link shadow" href="?action=bookdetail&bookid=' + bookdetail.bookid + '">',
+    '<a class="card nav-link shadow" href="?action=mobilebookdetail&bookid=' + bookdetail.bookid + '">',
       '<div class="card-vertical">',
         '<div class="img-square-wrapper text-center">',
             '<img class="" src="' + bookdetail.coverimage+ '" width="150" height="215" alt="Card image cap">',
