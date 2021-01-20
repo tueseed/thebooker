@@ -21,8 +21,8 @@ function setUserdata()
 
 function toggle_menu()
 {
-  document.getElementById('circularMenu').classList.toggle('active');
-//   quantity_service();
+    document.getElementById('circularMenu').classList.toggle('active');
+    alert('vmnckopvjoad');
 }
 
 
