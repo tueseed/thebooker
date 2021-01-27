@@ -3,10 +3,10 @@
             <i class="fas fa-bars" style="color:white;"></i>
     </a>
     <menu class="items-wrapper" id="menu_item">
-        <a href="#" class="menu-item fas fa-home"><span class="tooltiptext">หน้าหลัก</span></a>
-        <a href="#" class="menu-item fas fa-user-tag"><span class="tooltiptext">ผู้ควบคุมงาน</span></a>
-        <a href="#" class="menu-item fas fa-search"><span class="tooltiptext">ค้นหา</span></a>
-        <a href="#" class="menu-item fas fa-cogs"><span class="tooltiptext">ผู้ดูแล</span></a>
+        <a href="#" class="menu-item fas fa-home"></a>
+        <a href="#" class="menu-item fas fa-list-ul"></a>
+        <a href="#" class="menu-item fas fa-shopping-basket"></a>
+        <a href="#" class="menu-item fas fa-bell"></a>
     </menu>
 </div>
 <style>

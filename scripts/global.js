@@ -22,7 +22,6 @@ function setUserdata()
 function toggle_menu()
 {
     document.getElementById('circularMenu').classList.toggle('active');
-    alert('vmnckopvjoad');
 }
 
 
