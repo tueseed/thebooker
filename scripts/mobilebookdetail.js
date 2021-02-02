@@ -7,7 +7,7 @@ liff
     liff.getProfile().then(profile => {
                                         const name = profile.displayName
                                         // const uid = profile.uid
-                                        alert(uid)
+                                        alert(name)
                             })
   })
 querybookdetailformobile()
