@@ -1,5 +1,15 @@
 $('#header').hide()
-
+liff
+  .init({
+    liffId: "1655539437-ploBZxNG" // Use own liffId
+  })
+  .then(() => {
+    liff.getProfile().then(profile => {
+                                        const name = profile.displayName
+                                        const uid = profile.uid
+                                        alert(uid)
+                            })
+  })
 querybookdetailformobile()
 
 function querybookdetailformobile()
@@ -55,4 +65,9 @@ function querybookdetailformobile()
                     $('#detailarea').unblock()    
                 }					
             })
+}
+
+function putin()
+{
+    alert('9999' + uid)
 }
