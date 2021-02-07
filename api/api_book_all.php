@@ -60,7 +60,7 @@
         {
             $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date) VALUES('$uid','$bookid','$date')";
             mysqli_query($conn,$putinsqltext);
-            echo 'in to the basket';
+            echo '0';
         }
         else if($num > 0)
         {
