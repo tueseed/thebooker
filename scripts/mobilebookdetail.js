@@ -74,7 +74,7 @@ function putin()
     var uid  = sessionStorage.getItem('uid')
     var formData = new FormData()
     formData.append('command','putin')
-    formData.append('bookid',$('#bookid').val(bookid))
+    formData.append('bookid',$('#bookid').val())
     formData.append('uid',sessionStorage.getItem('uid'))
     $.ajax({
                 url: 'api/api_book_all.php',
