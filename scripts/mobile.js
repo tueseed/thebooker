@@ -6,7 +6,7 @@ liff
   .then(() => {
     liff.getProfile().then(profile => {
                                         const name = profile.displayName
-                                        alert(name)
+                                        // alert(name)
                             })
   })
 $(document).ready(
