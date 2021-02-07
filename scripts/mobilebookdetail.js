@@ -101,12 +101,6 @@ function putin()
                 success: function(response) 
                 {
                     alert(response) 
-                    
-                },
-                complete :function(response)
-                {
-                    // $('#detailarea').unblock() 
-                    alert(response)
                     if(response == 0)
                     {
                         Swal.fire({
@@ -121,6 +115,12 @@ function putin()
                             type: 'success' 
                             }).then(location.reload() )
                     }    
+                },
+                complete :function(response)
+                {
+                    // $('#detailarea').unblock() 
+                    alert(response)
+                    
                 }					
             })
     
