@@ -58,6 +58,7 @@ function querybookdetailformobile()
                     $('#status').html('สถานะการยืม : ' + bookstatustext)
                     $('#bookdescription').html('เรื่องย่อ : ' + obj[0].descript)
                     $('#bookcover').attr('src',obj[0].coverimage)
+                    $('#bookid').val(bookid)
                     
                     console.log(obj)     
                 },
@@ -71,10 +72,9 @@ function querybookdetailformobile()
 function putin()
 {
     var uid  = sessionStorage.getItem('uid')
-    var bookid =getUrlVars()["bookid"]
     var formData = new FormData()
     formData.append('command','putin')
-    formData.append('bookid',bookid)
+    formData.append('bookid',$('#bookid').val(bookid))
     formData.append('uid',sessionStorage.getItem('uid'))
     $.ajax({
                 url: 'api/api_book_all.php',
