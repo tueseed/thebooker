@@ -70,5 +70,5 @@ function querybookdetailformobile()
 function putin()
 {
     var uid  = sessionStorage.getItem('uid')
-    alert(uid)
+    
 }
