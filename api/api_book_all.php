@@ -48,5 +48,14 @@
         mysqli_query($conn,$queryallbook);
         echo $queryallbook;
     }
+    else if($cmd == 'putin')
+    {
+        $date = date('Y-m-d H:i:s');
+        $bookid = $_POST["bookid"];
+        $uid = $_POST["uid"];
+        $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date) VALUES('$uid','$bookname','$date')";
+        mysqli_query($conn,$putinsqltext);
+        echo 'in to the basket';
+    }
     
 ?>
