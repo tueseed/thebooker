@@ -58,7 +58,7 @@ function querybookdetailformobile()
                     $('#status').html('สถานะการยืม : ' + bookstatustext)
                     $('#bookdescription').html('เรื่องย่อ : ' + obj[0].descript)
                     $('#bookcover').attr('src',obj[0].coverimage)
-                    $('#bookid').val(bookid)
+                    $('#bookid').val(obj[0].bookid)
                     
                     console.log(obj)     
                 },
