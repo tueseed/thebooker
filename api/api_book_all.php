@@ -53,7 +53,7 @@
         $date = date('Y-m-d H:i:s');
         $bookid = $_POST["bookid"];
         $uid = $_POST["uid"];
-        $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='$bookname'";
+        $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='$bookid'";
         $result = mysqli_query($conn,$checkbook);
         echo $result;
         // $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date) VALUES('$uid','$bookid','$date')";
