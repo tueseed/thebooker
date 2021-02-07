@@ -71,10 +71,6 @@ function querybookdetailformobile()
 
 function putin()
 {
-    Swal.fire({
-        title: "หยิบหนังสือใส่ตระกร้าแล้ว",
-        type: 'success' 
-        })
     var uid  = sessionStorage.getItem('uid')
     var formData = new FormData()
     formData.append('command','putin')
@@ -105,6 +101,11 @@ function putin()
                 success: function(response) 
                 {
                     // alert(response) 
+                    
+                },
+                complete :function(response)
+                {
+                    $('#detailarea').unblock() 
                     if(response == 0)
                     {
                         Swal.fire({
@@ -118,11 +119,7 @@ function putin()
                             title: "หนังสือเล่มนี้อยู่ในตระกร้าแล้ว",
                             type: 'success' 
                             }).then(location.reload() )
-                    } 
-                },
-                complete :function()
-                {
-                    $('#detailarea').unblock()    
+                    }    
                 }					
             })
     
