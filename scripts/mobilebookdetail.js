@@ -100,7 +100,9 @@ function putin()
                 },
                 success: function(response) 
                 {
-                    alert(response)   
+                    alert(response) 
+                    if(response == 0)
+                    {}  
                 },
                 complete :function()
                 {
