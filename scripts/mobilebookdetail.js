@@ -101,14 +101,14 @@ function putin()
                 success: function(response) 
                 {
                     alert(response) 
-                    if(response == 0)
+                    if(response == '0')
                     {
                         Swal.fire({
                         title: "หยิบหนังสือใส่ตระกร้าแล้ว",
                         type: 'success' 
                         }).then(location.reload())
                     }
-                    else if(response == 0)
+                    else if(response == '1')
                     {
                         Swal.fire({
                             title: "หนังสือเล่มนี้อยู่ในตระกร้าแล้ว",
