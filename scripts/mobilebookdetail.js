@@ -7,6 +7,7 @@ liff
     liff.getProfile().then(profile => {
                                         const name = profile.displayName
                                         const uid = profile.userId
+                                        sessionStorage.setItem('uid',uid)
                             })
   })
 querybookdetailformobile()
@@ -68,5 +69,6 @@ function querybookdetailformobile()
 
 function putin()
 {
-    alert('9999')
+    var uid  = sessionStorage.getItem('uid')
+    alert(uid)
 }
