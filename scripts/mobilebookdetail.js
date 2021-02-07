@@ -71,6 +71,10 @@ function querybookdetailformobile()
 
 function putin()
 {
+    Swal.fire({
+        title: "หยิบหนังสือใส่ตระกร้าแล้ว",
+        type: 'success' 
+        })
     var uid  = sessionStorage.getItem('uid')
     var formData = new FormData()
     formData.append('command','putin')
