@@ -55,7 +55,8 @@
         $uid = $_POST["uid"];
         $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='$bookid'";
         $result = mysqli_query($conn,$checkbook);
-        echo $result;
+        $num = mysqli_num_rows($result);
+        echo $num;
         // $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date) VALUES('$uid','$bookid','$date')";
         // mysqli_query($conn,$putinsqltext);
         // echo 'in to the basket';
