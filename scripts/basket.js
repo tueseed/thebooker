@@ -12,12 +12,8 @@ liff
                             })
   })
 
-  $(document).ready(
-    function(){
-        check_basket()
-              }
-)
-async function check_basket()
+$(document).ready(function(){check_basket()})
+function check_basket()
 {
     alert('in function check')
     var formData = new FormData()
