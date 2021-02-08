@@ -71,7 +71,7 @@
     else if($cmd == 'checkbasket')
     {
         $uid = $_POST["uid"];
-        $queryallbook = "SELECT * FROM tbl_borrow WHERE uid='$uid'";
+        $queryallbook = "SELECT * FROM tbl_borrow INNER JOIN tbl_book ON tbl_borrow.book_id=tbl_book.bookid WHERE uid='$uid'";
         $query = mysqli_query($conn,$queryallbook);
         $data = array();
         while($obj = mysqli_fetch_assoc($query))

@@ -48,7 +48,7 @@ function check_basket()
                     while(obj[j])
                     {
                         // $('#lineItem').append(render_lineItem(obj[j]))
-                        alert(obj[j].id)
+                        alert(obj[j].bookid)
                         j++;
                     }
                     // alert('----')
