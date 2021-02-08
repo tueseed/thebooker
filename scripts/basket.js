@@ -8,6 +8,7 @@ liff
                                         const name = profile.displayName
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
+                                        alert(uid)
                             })
   })
 check_basket()
