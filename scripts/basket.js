@@ -47,11 +47,9 @@ function check_basket()
                     var j =0;
                     while(obj[j])
                     {
-                        $('#lineItem').append(render_lineItem(obj[j]))
-                        alert(obj[j].bookid)
+                        $('#lineItem').append(render_lineItem(obj[j],j))
                         j++;
                     }
-                    // alert('----')
                 },
                 complete :function()
                 {
