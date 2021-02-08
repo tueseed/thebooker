@@ -1,5 +1,5 @@
 $('#header').hide()
-liff
+await liff
   .init({
     liffId: "1655539437-ploBZxNG" // Use own liffId
   })
@@ -11,9 +11,10 @@ liff
                                         alert(uid)
                             })
   })
-check_basket()
 
-function check_basket()
+await check_basket()
+
+async function check_basket()
 {
     alert('in function check')
     var formData = new FormData()
