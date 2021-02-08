@@ -47,7 +47,7 @@ function check_basket()
                     var j =0;
                     while(obj[j])
                     {
-                        // $('#lineItem').append(render_lineItem(obj[j]))
+                        $('#lineItem').append(render_lineItem(obj[j]))
                         alert(obj[j].bookid)
                         j++;
                     }
@@ -63,7 +63,7 @@ function check_basket()
 function render_lineItem(book)
 {
     return[
-        '<p>' + book.id,
+        '<p>' + book.bookname,
         '<span class="font-weight-bold text-danger">',
         '<i class="fas fa-trash float-right" onclick="del()" aria-hidden="true"i>',
         '</span></p><hr>'
