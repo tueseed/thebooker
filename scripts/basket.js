@@ -1,5 +1,5 @@
 $('#header').hide()
-await liff
+liff
   .init({
     liffId: "1655539437-ploBZxNG" // Use own liffId
   })
@@ -10,9 +10,7 @@ await liff
                                         sessionStorage.setItem('uid',uid)
                                         alert(uid)
                             })
-  })
-
-await check_basket()
+  }).then(check_basket())
 
 async function check_basket()
 {
