@@ -1,16 +1,16 @@
 $('#header').hide()
-liff
-  .init({
-    liffId: "1655539437-ploBZxNG" // Use own liffId
-  })
-  .then(() => {
-    liff.getProfile().then(profile => {
-                                        const name = profile.displayName
-                                        const uid = profile.userId
-                                        sessionStorage.setItem('uid',uid)
-                                        alert(uid)
-                            })
-  })
+// liff
+//   .init({
+//     liffId: "1655539437-ploBZxNG" // Use own liffId
+//   })
+//   .then(() => {
+//     liff.getProfile().then(profile => {
+//                                         const name = profile.displayName
+//                                         const uid = profile.userId
+//                                         sessionStorage.setItem('uid',uid)
+//                                         alert(uid)
+//                             })
+//   })
 
 $(document).ready(function(){check_basket()})
 function check_basket()
@@ -18,7 +18,7 @@ function check_basket()
     alert('in function check')
     var formData = new FormData()
     formData.append('command','checkbasket')
-    formData.append('uid',uid)
+    formData.append('uid',sessionStorage.getItem('uid'))
     $.ajax({
                 url: 'api/api_book_all.php',
                 method: 'POST',
@@ -45,12 +45,13 @@ function check_basket()
                 {
                     var obj = JSON.parse(response)
                     var j =0;
-                    while(obj[j])
-                    {
-                        $('#lineItem').append(render_lineItem(obj[j]))
-                        alert(obj[j].id)
-                        j++;
-                    }
+                    // while(obj[j])
+                    // {
+                    //     $('#lineItem').append(render_lineItem(obj[j]))
+                    //     alert(obj[j].id)
+                    //     j++;
+                    // }
+                    alert('----')
                 },
                 complete :function()
                 {
