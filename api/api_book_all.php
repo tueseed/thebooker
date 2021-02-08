@@ -68,5 +68,17 @@
         }
         
     }
+    else if($cmd == 'checkbasket')
+    {
+        $uid = $_POST["uid"];
+        $queryallbook = "SELECT * FROM tbl_borrow WHERE uid='$uid'";
+        $query = mysqli_query($conn,$queryallbook);
+        $data = array();
+        while($obj = mysqli_fetch_assoc($query))
+        {
+            array_push($data,$obj);
+        }
+        echo json_encode($data); 
+    }
     
 ?>

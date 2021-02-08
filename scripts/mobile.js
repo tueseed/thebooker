@@ -6,7 +6,8 @@ liff
   .then(() => {
     liff.getProfile().then(profile => {
                                         const name = profile.displayName
-                                        // alert(name)
+                                        const uid = profile.userId
+                                        sessionStorage.setItem('uid',uid)
                             })
   })
 $(document).ready(
