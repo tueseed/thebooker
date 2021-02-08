@@ -15,6 +15,7 @@ check_basket()
 
 function check_basket()
 {
+    alert('in function check')
     var formData = new FormData()
     formData.append('command','checkbasket')
     formData.append('uid',uid)
