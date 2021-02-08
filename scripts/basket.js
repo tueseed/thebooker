@@ -10,8 +10,13 @@ liff
                                         sessionStorage.setItem('uid',uid)
                                         alert(uid)
                             })
-  }).then(check_basket())
+  })
 
+  $(document).ready(
+    function(){
+        check_basket()
+              }
+)
 async function check_basket()
 {
     alert('in function check')
