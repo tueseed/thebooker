@@ -45,13 +45,13 @@ function check_basket()
                 {
                     var obj = JSON.parse(response)
                     var j =0;
-                    // while(obj[j])
-                    // {
-                    //     $('#lineItem').append(render_lineItem(obj[j]))
-                    //     alert(obj[j].id)
-                    //     j++;
-                    // }
-                    alert('----')
+                    while(obj[j])
+                    {
+                        // $('#lineItem').append(render_lineItem(obj[j]))
+                        alert(obj[j].id)
+                        j++;
+                    }
+                    // alert('----')
                 },
                 complete :function()
                 {
