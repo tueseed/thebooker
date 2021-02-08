@@ -58,10 +58,10 @@ function check_basket()
             })
 }
 
-function render_lineItem(book)
+function render_lineItem(book,j)
 {
     return[
-        '<p>' + book.bookname,
+        '<p>' + j + '.' + book.bookname,
         '<span class="font-weight-bold text-danger">',
         '<i class="fas fa-trash float-right" onclick="del()" aria-hidden="true"i>',
         '</span></p><hr>'
