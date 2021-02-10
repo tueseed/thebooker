@@ -60,7 +60,7 @@ function check_basket()
 function render_lineItem(book,j)
 {
     return[
-        '<p>' + parseInt(j) + paresInt(1) + '.' + book.bookname,
+        '<p>' + parseInt(j) + parseInt(1) + '.' + book.bookname,
         '<button class="btn btn-danger float-right"><i class="fas fa-trash" onclick="deleteFrombasket(' + book.book_id + ')" aria-hidden="true"i></button>',
         '</p><hr>'
     ].join("")
