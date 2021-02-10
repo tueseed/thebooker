@@ -82,12 +82,13 @@ async function deleteFrombasket(bookid)
                 cache: false,
                 processData: false,
                 contentType: false,
+                beforeSend : function(){$('#lineItem').block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
                     bookname = obj[0].bookname
-                    
-                }				
+                },
+                complete :function(){$('#lineItem').unblock()}				
             })
     var result = await Swal.fire({
                         title: 'คุณต้องการลบ?',
@@ -108,5 +109,5 @@ async function deleteFrombasket(bookid)
                     //                     )
                     //                     }
                     //                     })
-    alert(result)
+    alert(result.isConfirmed)
 }
