@@ -97,7 +97,7 @@
         $mysql_check_last_bill = "SELECT MAX(bill_id) AS last_bill FROM tbl_bill WHERE uid ='$uid' AND bill_status='0'";
         $query_check = mysqli_query($conn,$mysql_check_last_bill);
         $obj_check = mysqli_fetch_assoc($query_check);
-        $last_bill = $obj_check["last_boill"];
+        $last_bill = $obj_check["last_bill"];
 
         $queryallbook = "SELECT * FROM tbl_borrow INNER JOIN tbl_book ON tbl_borrow.book_id=tbl_book.bookid WHERE uid='$uid' AND bill_id='$last_bill'";
         $query = mysqli_query($conn,$queryallbook);
