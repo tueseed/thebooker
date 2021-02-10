@@ -82,7 +82,9 @@
     }
     else if($cmd == 'deletefrombasket')
     {
-
+        $bookid = $_POST["bookid"];
+        $queryallbook = "DELETE FROM tbl_borrow WHERE book_id='$bookid'";
+        $query = mysqli_query($conn,$queryallbook);
     }
     
 ?>
