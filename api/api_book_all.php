@@ -80,5 +80,9 @@
         }
         echo json_encode($data); 
     }
+    else if($cmd == 'deletefrombasket')
+    {
+
+    }
     
 ?>
