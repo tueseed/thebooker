@@ -72,7 +72,7 @@
         {
             $last_bill = $obj_check["last_bill"];
 
-            $checkbook = "SELECT MAX(borrow_id) AS lastbill FROM tbl_borrow WHERE book_id='$bookid' AND bill_id='$last_bill";
+            $checkbook = "SELECT MAX(borrow_id) AS lastbill FROM tbl_borrow WHERE book_id='$bookid' AND bill_id='$last_bill'";
             $result = mysqli_query($conn,$checkbook);
             $obj_chk = mysqli_fetch_assoc($result);
             
