@@ -109,6 +109,13 @@ async function deleteFrombasket(bookid)
                     //                     )
                     //                     }
                     //                     })
-    alert(JSON.stringify(result))
-    alert(result.value)
+
+    if(result.value)
+    {
+        Swal.fire(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                )
+    }
 }
