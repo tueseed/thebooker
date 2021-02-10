@@ -54,13 +54,16 @@
         $bookid = $_POST["bookid"];
         $uid = $_POST["uid"];
         /////check bill last////
-        $mysql_check_lasr_bill = "SELECT MAX(bill_id) AS last_bill FROM tbl_borrow_bill WHERE uid ='$uid' AND bill_status='0'";
-        $query_check = mysqli_query($conn,$mysql_check_lasr_bill);
+        $mysql_check_last_bill = "SELECT MAX(bill_id) AS last_bill FROM tbl_bill WHERE uid ='$uid' AND bill_status='0'";
+        $query_check = mysqli_query($conn,$mysql_check_last_bill);
         $obj_check = mysqli_fetch_assoc($query_check);
         ///////////////////////
         if($obj_check["last_bill"] == null)
         {
-            echo '0';
+            $sql_creat_bill ="INSERT INTO tbl_bill(uid) VALUES('$uid')";
+            $queryinsert = mysqli_query($conn,$sql_creat_bill);
+            $lastid = mysqli_insert_id($conn);
+            echo $lastid;
         }
         else if($obj_check["last_bill"] !== null)
         {
