@@ -110,4 +110,5 @@ async function deleteFrombasket(bookid)
                     //                     }
                     //                     })
     alert(JSON.stringify(result))
+    alert(result.value)
 }
