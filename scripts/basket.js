@@ -15,7 +15,6 @@ $('#header').hide()
 $(document).ready(function(){check_basket()})
 function check_basket()
 {
-    alert('in function check')
     var formData = new FormData()
     formData.append('command','checkbasket')
     formData.append('uid',sessionStorage.getItem('uid'))
@@ -70,5 +69,41 @@ function render_lineItem(book,j)
 
 function deleteFrombasket(bookid)
 {
-    alert(bookid)
+    // alert(bookid)
+    var bookname = ''
+    var formData = new FormData()
+    formData.append('command','bookdetail')
+    formData.append('bookid',bookid)
+    await $.ajax({
+                url: 'api/api_book_all.php',
+                method: 'POST',
+                data:formData,
+                async: true,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function(response) 
+                {
+                    var obj = JSON.parse(response)
+                    bookname = obj[0].bookname
+                    
+                }				
+            })
+    await Swal.fire({
+        title: 'คุณต้องการลบ?',
+        text: bookname + ' ออกจากตระกร้า',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
 }
