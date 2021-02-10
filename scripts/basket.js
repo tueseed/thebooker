@@ -109,5 +109,5 @@ async function deleteFrombasket(bookid)
                     //                     )
                     //                     }
                     //                     })
-    alert(result.isConfirmed)
+    alert(JSON.stringify(result))
 }
