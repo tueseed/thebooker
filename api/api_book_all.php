@@ -70,7 +70,7 @@
         else if($obj_check["last_bill"] !== null)
         {
             $last_bill = $obj_check["last_bill"];
-            echo $lastid;
+            echo $last_bill;
         }
         // $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='$bookid'";
         // $result = mysqli_query($conn,$checkbook);
