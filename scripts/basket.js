@@ -89,7 +89,7 @@ async function deleteFrombasket(bookid)
                     
                 }				
             })
-    await Swal.fire({
+    var result = await Swal.fire({
                         title: 'คุณต้องการลบ?',
                         text: bookname + ' ออกจากตระกร้า',
                         icon: 'warning',
@@ -98,13 +98,15 @@ async function deleteFrombasket(bookid)
                         cancelButtonColor: '#d33',
                         confirmButtonText: 'ใช่ ลบเลย',
                         cancelButtonText: 'ยกเลิก'
-                    }).then((result) => {
-                                        if (result.isConfirmed) {
-                                        Swal.fire(
-                                            'Deleted!',
-                                            'Your file has been deleted.',
-                                            'success'
-                                        )
-                                        }
-                                        })
+                    })
+                    // .then((result) => {
+                    //                     if (result.isConfirmed) {
+                    //                     Swal.fire(
+                    //                         'Deleted!',
+                    //                         'Your file has been deleted.',
+                    //                         'success'
+                    //                     )
+                    //                     }
+                    //                     })
+    alert(result)
 }
