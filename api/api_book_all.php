@@ -76,7 +76,7 @@
             $num = mysqli_num_rows($result);
             if($num == 0)
             {
-                $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date) VALUES('$uid','$bookid','$date')";
+                $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id) VALUES('$uid','$bookid','$date','$last_bill')";
                 mysqli_query($conn,$putinsqltext);
                 echo '0';
             }

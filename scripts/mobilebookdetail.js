@@ -86,7 +86,7 @@ function putin()
                 contentType: false,
                 success: function(response) 
                 {
-                    // alert(response)
+                    alert(response)
                     if(response == '0')
                     {
                         Swal.fire({
