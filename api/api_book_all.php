@@ -63,11 +63,14 @@
             $sql_creat_bill ="INSERT INTO tbl_bill(uid) VALUES('$uid')";
             $queryinsert = mysqli_query($conn,$sql_creat_bill);
             $lastid = mysqli_insert_id($conn);
-            echo $lastid;
+            
+            $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id) VALUES('$uid','$bookid','$date','$lastid')";
+            mysqli_query($conn,$putinsqltext);
         }
         else if($obj_check["last_bill"] !== null)
         {
-            echo '1';
+            $last_bill = $obj_check["last_bill"];
+            echo $lastid;
         }
         // $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='$bookid'";
         // $result = mysqli_query($conn,$checkbook);
