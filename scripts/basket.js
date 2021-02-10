@@ -67,7 +67,7 @@ function render_lineItem(book,j)
     ].join("")
 }
 
-function deleteFrombasket(bookid)
+async function deleteFrombasket(bookid)
 {
     // alert(bookid)
     var bookname = ''
