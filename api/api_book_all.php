@@ -71,16 +71,17 @@
         else if($obj_check["last_bill"] !== null)
         {
             $last_bill = $obj_check["last_bill"];
+
             $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='$bookid' AND bill_id='$last_bill";
             $result = mysqli_query($conn,$checkbook);
-            $num = mysqli_num_rows($result);
-            if($num == 0)
+            $obj_chk = mysqli_fetch_assoc($result);
+            if($obj_chk["borrow_id"] == 0)
             {
                 $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id) VALUES('$uid','$bookid','$date','$last_bill')";
                 mysqli_query($conn,$putinsqltext);
                 echo '0';
             }
-            else if($num > 0)
+            else if($obj_chk["borrow_id"] > 0)
             {
                 echo '1';
             }
