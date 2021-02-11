@@ -47,9 +47,9 @@ function check_basket()
                 {
                     var obj = JSON.parse(response)
                     var j =0;
-                    while(obj[j])
+                    while(obj[0][j])
                     {
-                        $('#lineItem').append(render_lineItem(obj[j],j))
+                        $('#lineItem').append(render_lineItem(obj[0][j],j))
                         j++;
                     }
                 },

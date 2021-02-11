@@ -102,6 +102,7 @@
         $queryallbook = "SELECT * FROM tbl_borrow INNER JOIN tbl_book ON tbl_borrow.book_id=tbl_book.bookid WHERE uid='$uid' AND bill_id='$last_bill'";
         $query = mysqli_query($conn,$queryallbook);
         $data = array();
+        array_push($data,$obj_check);
         while($obj = mysqli_fetch_assoc($query))
         {
             array_push($data,$obj);
