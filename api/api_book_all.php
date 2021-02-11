@@ -118,7 +118,7 @@
     else if($cmd == 'checkout')
     {
         $bill_id = $_POST["bill_id"];
-        $sqlcheckout = "UPDATE tbl_bill SET bill_status='1' WHERE bill_id='$bill_id'";
+        $sqlcheckout = "UPDATE tbl_bill SET bill_status=1 WHERE bill_id='$bill_id'";
         mysqli_query($conn,$sqlcheckout);
     }
     
