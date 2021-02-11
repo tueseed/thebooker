@@ -62,13 +62,14 @@ function check_basket()
 
 function render_lineItem(book,j)
 {
-    var next7day = date.setDate(date.getDate()+ 7)
+    var next7day = new Date()
+    next7day.setDate(date.getDate()+ 7)
     return[
         '<p>' + parseInt(j+1) + '.' + book.bookname,
         '<button class="btn btn-danger float-right">',
         '<i class="fas fa-trash" onclick="deleteFrombasket(' + book.bookid + "," + book.borrow_id + ')" aria-hidden="true"></i>',
         '</button>',
-        '</p>' + next7day,
+        '</p>กำหนดส่งคืน : ' + dayThai[next7day.getDay()],
         '<hr>'
     ].join("")
 }
