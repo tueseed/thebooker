@@ -70,8 +70,8 @@ function render_billlist(bill,j)
     
     return[
         '<p>'+ parseInt(j+1 )+'.ใบยืมเลขที่ ' + bill.bill_id,
-        '<button class="btn btn-danger float-right" data-toggle="collapse" data-target="#bill'+bill.bill_id+'" aria-expanded="false" aria-controls="collapseExample">',
-            '<i class="fas fa-trash" aria-hidden="true"></i>',
+        '<button class="btn btn-success float-right" data-toggle="collapse" data-target="#bill'+bill.bill_id+'" aria-expanded="false" aria-controls="collapseExample">',
+            '<i class="fas fa-eye" aria-hidden="true"></i>',
         '</button>',
         '</p>',
     '<div class="collapse" id="bill'+bill.bill_id+'">',
