@@ -11,7 +11,9 @@ $('#header').hide()
 //                                         alert(uid)
 //                             })
 //   })
-
+var date = new Date()
+var dayThai = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัส','ศุกร์','เสาร์']
+var monthThai = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหมคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม']
 $(document).ready(function(){check_basket()})
 function check_basket()
 {
@@ -63,7 +65,8 @@ function render_lineItem(book,j)
     return[
         '<p>' + parseInt(j+1) + '.' + book.bookname,
         '<button class="btn btn-danger float-right"><i class="fas fa-trash" onclick="deleteFrombasket(' + book.bookid + "," + book.borrow_id + ')" aria-hidden="true"i></button>',
-        '</p><hr>'
+        '</p>',
+        '<p>'+ date.getDate() + '</p><hr>'
     ].join("")
 }
 
