@@ -48,7 +48,12 @@ function check_basket()
                     var obj = JSON.parse(response)
                     $('#borrow_id').html('ใบยืมหนังสือเลขที่ ' + obj[0].last_bill)
                     $('#btn_checkout').val(obj[0].last_bill)
-                    if(obj.length == 1){$('#lineItem').append('ไม่มีหนังสือที่เลือกไว้')}
+                    if(obj.length == 1)
+                    {
+                        $('#lineItem').append('<div class="text-center"><p>ไม่มีหนังสือที่เลือกไว้</p></div>')
+                        $('#borrow_id').hide()
+                        $('#btn_checkout').hide()
+                    }
                     var j =1;
                     while(obj[j])
                     {
