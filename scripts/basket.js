@@ -137,9 +137,9 @@ async function deleteFrombasket(bookid,borrow_id)
 
 async function checkout(bill_id)
 {
-    alert(bill_id)
+    
     var formData = new FormData()
-        formData.append('command','chechout')
+        formData.append('command','checkout')
         formData.append('bill_id',bill_id)
         await $.ajax({
                     url: 'api/api_book_all.php',
@@ -156,7 +156,7 @@ async function checkout(bill_id)
                     },
                     complete :function(){$('#lineItem').unblock()}				
                 })
-        await Swal.fire('Deleted!','Your file has been deleted.','success')
+        await Swal.fire('สำเร็จ!','ยืมหนังสือเรียบร้อย','ดูรายละเอียดได้ที่เมนู <i class="fas fas fa-list-ul"></i>')
         check_basket()
     
 }
