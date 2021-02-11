@@ -51,7 +51,7 @@ function check_basket()
                     if(obj.length == 1)
                     {
                         $('#lineItem').append('<div class="text-center"><p>ไม่มีหนังสือที่เลือกไว้</p></div>')
-                        $('#borrow_id').hide()
+                        $('#borrow_id_label').hide()
                         $('#btn_checkout').hide()
                     }
                     var j =1;
