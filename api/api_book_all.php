@@ -131,5 +131,17 @@
             mysqli_query($conn,$sql_update_book);
         }
     }
+    else if($cmd == 'checkmyborrow')
+    {
+        $uid = $_POST["uid"];
+        $sql_bill = "SELECT * FROM tbl_bill WHERE uid='$uid'";
+        $query = mysqli_query($conn,$sql_bill);
+        $data = array();
+        while($obj = mysqli_fetch_assoc($query))
+        {
+            array_push($data,$obj);
+        }
+        echo json_encode($data); 
+    }
     
 ?>
