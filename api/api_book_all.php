@@ -139,6 +139,11 @@
         $data = array();
         while($obj = mysqli_fetch_assoc($query))
         {
+            $bill_id =$obj["bill_id"];
+            $sql_book = "SELECT * FROM tbl_borrow INNER JOIN tbl_book ON tbl_borrow.book_id=tbl_book.bookid WHERE bill_id ='$bill_id'";
+            $querybook = mysqli_query($conn,$sql_book);
+            $objbook = mysqli_fetch_all($querybook,MYSQLI_ASSOC);
+            $obj["book"]= $objbook;
             array_push($data,$obj);
         }
         echo json_encode($data); 
