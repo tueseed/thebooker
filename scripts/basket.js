@@ -46,13 +46,13 @@ function check_basket()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
-                    alert(obj[0])
+                    alert(obj[0].last_bill)
                     alert(obj[1][0])
                     alert(JSON.stringify(obj[1]))
                     var j =0;
                     while(obj[1][j])
                     {
-                        $('#lineItem').append(render_lineItem(obj[1][j],j))
+                        $('#lineItem').append(render_lineItem(obj[1].j,j))
                         j++;
                     }
                 },
