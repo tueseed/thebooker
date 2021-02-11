@@ -46,10 +46,7 @@ function check_basket()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
-                    // alert(obj[0].last_bill)
-                    // alert(obj[1][0])
-                    // alert(JSON.stringify(obj))
-                    // $('#lineItem').append(JSON.stringify(obj))
+                    $('#borrow_id').html('ใบยืมหนังสือเลขที่ ' + obj[0])
                     var j =1;
                     while(obj[j])
                     {
@@ -69,7 +66,7 @@ function render_lineItem(book,j)
     var next7day = new Date()
     next7day.setDate(date.getDate()+ 7)
     return[
-        '<p>' + parseInt(j+1) + '.' + book.bookname,
+        '<p>' + j + '.' + book.bookname,
         '<button class="btn btn-danger float-right">',
         '<i class="fas fa-trash" onclick="deleteFrombasket(' + book.bookid + "," + book.borrow_id + ')" aria-hidden="true"></i>',
         '</button>',
