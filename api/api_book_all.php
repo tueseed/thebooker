@@ -127,7 +127,7 @@
         while($obj_book_for_update = mysqli_fetch_assoc($query_from_borrow_for_updatebook))
         {
             $bookid = $obj_book_for_update["book_id"];
-            $sql_update_book = "UPDATE tbl_book SET status=1 WHERE bookid='$bookid'";
+            $sql_update_book = "UPDATE tbl_book SET book_status=1 WHERE bookid='$bookid'";
             mysqli_query($conn,$sql_update_book);
         }
     }
