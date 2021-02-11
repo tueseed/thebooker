@@ -66,7 +66,7 @@ function render_lineItem(book,j)
         '<p>' + parseInt(j+1) + '.' + book.bookname,
         '<button class="btn btn-danger float-right"><i class="fas fa-trash" onclick="deleteFrombasket(' + book.bookid + "," + book.borrow_id + ')" aria-hidden="true"i></button>',
         '</p>',
-        '<p>'+ date.getDate() + '</p><hr>'
+        '<p>ไำก'+ date.getDate() + '</p><hr>'
     ].join("")
 }
 
