@@ -46,14 +46,14 @@ function check_basket()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
-                    alert(obj[0].last_bill)
-                    alert(obj[1][0])
-                    alert(JSON.stringify(obj))
-                    $('#lineItem').append(JSON.stringify(obj))
-                    var j =0;
-                    while(obj[1].j)
+                    // alert(obj[0].last_bill)
+                    // alert(obj[1][0])
+                    // alert(JSON.stringify(obj))
+                    // $('#lineItem').append(JSON.stringify(obj))
+                    var j =1;
+                    while(obj[j])
                     {
-                        $('#lineItem').append(render_lineItem(obj[1].j,j))
+                        $('#lineItem').append(render_lineItem(obj[j],j))
                         j++;
                     }
                 },
