@@ -118,8 +118,16 @@
     else if($cmd == 'checkout')
     {
         $bill_id = $_POST["bill_id"];
-        $sqlcheckout = "UPDATE tbl_bill SET bill_status=1 WHERE bill_id='$bill_id'";
-        mysqli_query($conn,$sqlcheckout);
+        // $sqlcheckout = "UPDATE tbl_bill SET bill_status=1 WHERE bill_id='$bill_id'";
+        // mysqli_query($conn,$sqlcheckout);
+
+        $sql_from_borrow_for_updatebook = "SELECT * FROM tbl_borrow WHERE bill_id='$bill_id'";
+        $query_from_borrow_for_updatebook = mysqli_query($conn,$sql_from_borrow_for_updatebook);
+        
+        while($obj_book_for_update = mysql_fetch_array($query_from_borrow_for_updatebook))
+        {
+            echo $obj_book_for_update["book_id"];
+        }
     }
     
 ?>
