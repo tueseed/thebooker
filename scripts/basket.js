@@ -62,18 +62,18 @@ function render_lineItem(book,j)
 {
     return[
         '<p>' + parseInt(j+1) + '.' + book.bookname,
-        '<button class="btn btn-danger float-right"><i class="fas fa-trash" onclick="deleteFrombasket(' + book.borrow_id + ')" aria-hidden="true"i></button>',
+        '<button class="btn btn-danger float-right"><i class="fas fa-trash" onclick="deleteFrombasket(' + book + ')" aria-hidden="true"i></button>',
         '</p><hr>'
     ].join("")
 }
 
-async function deleteFrombasket(borrow_id)
+async function deleteFrombasket(book)
 {
     // alert(bookid)
     var bookname = ''
     var formData = new FormData()
     formData.append('command','bookdetail')
-    formData.append('borrow_id',borrow_id)
+    formData.append('bookid',book.bookid)
     await $.ajax({
                 url: 'api/api_book_all.php',
                 method: 'POST',
@@ -114,7 +114,7 @@ async function deleteFrombasket(borrow_id)
     {
         var formData = new FormData()
         formData.append('command','deletefrombasket')
-        formData.append('bookid',bookid)
+        formData.append('borrow_id',book.borrow_id)
         await $.ajax({
                     url: 'api/api_book_all.php',
                     method: 'POST',
