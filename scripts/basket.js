@@ -50,7 +50,7 @@ function check_basket()
                     alert(obj[1][0])
                     alert(JSON.stringify(obj[1]))
                     var j =0;
-                    while(obj[1][j])
+                    while(obj[1].j)
                     {
                         $('#lineItem').append(render_lineItem(obj[1].j,j))
                         j++;
