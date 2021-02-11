@@ -46,8 +46,9 @@ function check_basket()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
-                    alert(response)
-                    alert(JSON.stringify(obj))
+                    alert(obj[0])
+                    alert(obj[1])
+                    // alert(JSON.stringify(obj))
                     // var j =0;
                     // while(obj[1][j])
                     // {
