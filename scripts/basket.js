@@ -156,7 +156,7 @@ async function checkout(bill_id)
                     },
                     complete :function(){$('#lineItem').unblock()}				
                 })
-        await Swal.fire('สำเร็จ!','ยืมหนังสือเรียบร้อย','ดูรายละเอียดได้ที่เมนู <i class="fas fas fa-list-ul"></i>')
+        await Swal.fire('สำเร็จ!','ยืมหนังสือเรียบร้อย<br>ดูรายละเอียดได้ที่เมนู <i class="fas fas fa-list-ul"></i>','success')
         check_basket()
     
 }
