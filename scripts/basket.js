@@ -135,7 +135,7 @@ async function deleteFrombasket(bookid,borrow_id)
     }
 }
 
-function checkout(bill_id)
+async function checkout(bill_id)
 {
     alert(bill_id)
     var formData = new FormData()
