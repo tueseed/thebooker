@@ -49,12 +49,12 @@ function check_basket()
                     alert(obj[0])
                     alert(obj[1])
                     // alert(JSON.stringify(obj))
-                    // var j =0;
-                    // while(obj[1][j])
-                    // {
-                    //     $('#lineItem').append(render_lineItem(obj[1][j],j))
-                    //     j++;
-                    // }
+                    var j =0;
+                    while(obj[1][j])
+                    {
+                        $('#lineItem').append(render_lineItem(obj[1][j],j))
+                        j++;
+                    }
                 },
                 complete :function()
                 {
