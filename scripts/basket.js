@@ -47,6 +47,7 @@ function check_basket()
                 {
                     var obj = JSON.parse(response)
                     $('#borrow_id').html('ใบยืมหนังสือเลขที่ ' + obj[0].last_bill)
+                    $('#btn_checkout').val(obj[0].last_bill)
                     var j =1;
                     while(obj[j])
                     {
@@ -142,4 +143,9 @@ async function deleteFrombasket(bookid,borrow_id)
         await Swal.fire('Deleted!','Your file has been deleted.','success')
         check_basket()
     }
+}
+
+function checkout(bill_id)
+{
+    alert(bill_id)
 }
