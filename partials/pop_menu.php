@@ -3,8 +3,8 @@
             <i class="fas fa-bars" style="color:white;"></i>
     </a>
     <menu class="items-wrapper" id="menu_item">
-        <a href="#" class="menu-item fas fa-home"></a>
-        <a href="#" class="menu-item fas fa-list-ul"></a>
+        <a href="?action=mobile" class="menu-item fas fa-home"></a>
+        <a href="?action=myborrow" class="menu-item fas fa-list-ul"></a>
         <a href="?action=basket" class="menu-item fas fa-shopping-basket"></a>
         <a href="#" class="menu-item fas fa-bell"></a>
     </menu>
