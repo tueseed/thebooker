@@ -46,7 +46,7 @@ function check_basket()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
-                    $('#borrow_id').html('ใบยืมหนังสือเลขที่ ' + obj[0])
+                    $('#borrow_id').html('ใบยืมหนังสือเลขที่ ' + obj[0].last_bill)
                     var j =1;
                     while(obj[j])
                     {
