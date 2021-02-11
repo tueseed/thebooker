@@ -12,8 +12,8 @@ $('#header').hide()
 //                             })
 //   })
 var date = new Date()
-var dayThai = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัส','ศุกร์','เสาร์']
-var monthThai = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหมคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม']
+var dayThai = ['อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.']
+var monthThai = ['ม.ค','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']
 $(document).ready(function(){check_basket()})
 function check_basket()
 {
@@ -62,12 +62,13 @@ function check_basket()
 
 function render_lineItem(book,j)
 {
+    var next7day = date.setDate(date.getDate()+ 7)
     return[
         '<p>' + parseInt(j+1) + '.' + book.bookname,
         '<button class="btn btn-danger float-right">',
         '<i class="fas fa-trash" onclick="deleteFrombasket(' + book.bookid + "," + book.borrow_id + ')" aria-hidden="true"></i>',
         '</button>',
-        '</p>' + date,
+        '</p>' + next7day,
         '<hr>'
     ].join("")
 }
