@@ -48,9 +48,9 @@ function check_basket()
                     var obj = JSON.parse(response)
                     JSON.stringify(obj)
                     var j =0;
-                    while(obj[0][j])
+                    while(obj[1][j])
                     {
-                        $('#lineItem').append(render_lineItem(obj[0][j],j))
+                        $('#lineItem').append(render_lineItem(obj[1][j],j))
                         j++;
                     }
                 },
