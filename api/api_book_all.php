@@ -134,7 +134,7 @@
     else if($cmd == 'checkmyborrow')
     {
         $uid = $_POST["uid"];
-        $sql_bill = "SELECT * FROM tbl_bill WHERE uid='$uid'";
+        $sql_bill = "SELECT * FROM tbl_bill WHERE uid='$uid' AND bill_status=1";
         $query = mysqli_query($conn,$sql_bill);
         $data = array();
         while($obj = mysqli_fetch_assoc($query))
