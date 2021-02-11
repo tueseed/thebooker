@@ -108,17 +108,7 @@ async function deleteFrombasket(bookid,borrow_id)
                         cancelButtonColor: '#d33',
                         confirmButtonText: 'ใช่ ลบเลย',
                         cancelButtonText: 'ยกเลิก'
-                    })
-                    // .then((result) => {
-                    //                     if (result.isConfirmed) {
-                    //                     Swal.fire(
-                    //                         'Deleted!',
-                    //                         'Your file has been deleted.',
-                    //                         'success'
-                    //                     )
-                    //                     }
-                    //                     })
-
+                    })            
     if(result.value)
     {
         var formData = new FormData()
@@ -148,5 +138,25 @@ async function deleteFrombasket(bookid,borrow_id)
 function checkout(bill_id)
 {
     alert(bill_id)
+    var formData = new FormData()
+        formData.append('command','chechout')
+        formData.append('bill_id',bill_id)
+        await $.ajax({
+                    url: 'api/api_book_all.php',
+                    method: 'POST',
+                    data:formData,
+                    async: true,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    beforeSend : function(){$('#lineItem').block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
+                    success: function(response) 
+                    {
+                        alert(response)
+                    },
+                    complete :function(){$('#lineItem').unblock()}				
+                })
+        await Swal.fire('Deleted!','Your file has been deleted.','success')
+        check_basket()
     
 }
