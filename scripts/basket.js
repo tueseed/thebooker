@@ -69,7 +69,7 @@ function render_lineItem(book,j)
         '<button class="btn btn-danger float-right">',
         '<i class="fas fa-trash" onclick="deleteFrombasket(' + book.bookid + "," + book.borrow_id + ')" aria-hidden="true"></i>',
         '</button>',
-        '</p>กำหนดส่งคืน : ' + dayThai[next7day.getDay()] + ' ' + next7day.getDate() + ' ' + monthThai[next7day.getMonth()] + ' ' + parseInt(next7day.getFullYear + 543),
+        '</p>กำหนดส่งคืน : ' + dayThai[next7day.getDay()] + ' ' + next7day.getDate() + ' ' + monthThai[next7day.getMonth()] + ' ' + parseInt(next7day.getFullYear() + 543),
         '<hr>'
     ].join("")
 }
