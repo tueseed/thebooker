@@ -48,7 +48,8 @@ function check_basket()
                     var obj = JSON.parse(response)
                     alert(obj[0].last_bill)
                     alert(obj[1][0])
-                    alert(JSON.stringify(obj[1]))
+                    alert(JSON.stringify(obj))
+                    $('#lineItem').append(JSON.stringify(obj))
                     var j =0;
                     while(obj[1].j)
                     {
