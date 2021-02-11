@@ -115,5 +115,10 @@
         $queryallbook = "DELETE FROM tbl_borrow WHERE borrow_id='$borrow_id'";
         $query = mysqli_query($conn,$queryallbook);
     }
+    else if($cmd == 'checkout')
+    {
+        $bill_id = $_POST["bill_id"];
+        $sqlcheckout = "UPDATE tbl_bill SET bill_status='1' WHERE bill_id='$bill_id'";
+    }
     
 ?>
