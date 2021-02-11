@@ -34,7 +34,7 @@
     <div class="row mt-2">
         <div class="col-lg-12 text-center">
             <input type="hidden" id="bookid">
-            <button class="btn btn-primary" onclick="putin()">หยิบใส่ตะกร้า</button>
+            <button class="btn btn-primary" id="btn_putin" onclick="putin()">หยิบใส่ตะกร้า</button>
         </div>
     </div>
 </div>

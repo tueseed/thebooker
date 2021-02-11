@@ -44,13 +44,15 @@ function querybookdetailformobile()
                 success: function(response) 
                 {
                     var obj = JSON.parse(response)
-                    if(obj[0].status == '0')
+                    if(obj[0].book_status == '0')
                     {
                         var bookstatustext = 'ว่าง'
+                        $('#btn_putin').show()
                     }
-                    else if(obj[0].status == '1')
+                    else if(obj[0].book_status == '1')
                     {
                         var bookstatustext = 'ไม่ว่าง'
+                        $('#btn_putin').hide()
                     }
                     $('#bookname').html('ชื่อหนังสือ : ' + obj[0].bookname)
                     $('#writer').html('ผู้เขียน : ' + obj[0].writer)

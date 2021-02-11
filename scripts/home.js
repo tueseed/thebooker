@@ -159,11 +159,11 @@ function querybook()
 //////////////////สร้างงการ์ดหนังสือแต่ละเล่ม
 function makebookcard(bookdetail)
 {
-  if(bookdetail.status == '0')
+  if(bookdetail.book_status == '0')
   {
     var bookstatustext = '<span class="card-text text-success">ว่าง</span>'
   }
-  else if(bookdetail.status == '1')
+  else if(bookdetail.book_status == '1')
   {
     var bookstatustext = '<span class="card-text text-danger">ไม่ว่าง</span>'
   }

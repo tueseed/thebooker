@@ -48,12 +48,20 @@ function check_basket()
                     var obj = JSON.parse(response)
                     $('#borrow_id').html('ใบยืมหนังสือเลขที่ ' + obj[0].last_bill)
                     $('#btn_checkout').val(obj[0].last_bill)
-                    var j =1;
-                    while(obj[j])
+                    if(obj.length == 0)
                     {
-                        $('#lineItem').append(render_lineItem(obj[j],j))
-                        j++;
+                        $('#lineItem').append('ไม่มีหนังสือที่เลือกไว้')
                     }
+                    else if(obj.length > 0)
+                    {
+                        var j =1;
+                        while(obj[j])
+                        {
+                            $('#lineItem').append(render_lineItem(obj[j],j))
+                            j++;
+                        }
+                    }
+                    
                 },
                 complete :function()
                 {
