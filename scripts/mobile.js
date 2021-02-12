@@ -9,11 +9,11 @@ liff
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
                                             
-                            }).then({checkregis()   })
+                            })
   })
 $(document).ready(
     function(){
-        
+      checkregis()
       querybook()
               }
 )
@@ -99,7 +99,7 @@ function checkregis(uid)
 {
   var formData = new FormData()
   formData.append('command','checkregis')
-  formData.append('uid',sessionStorage.getItem('userId'))
+  formData.append('uid',sessionStorage.getItem('uid'))
   $.ajax({
             url: 'api/member_api.php',
             method: 'POST',
