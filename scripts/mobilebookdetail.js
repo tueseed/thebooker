@@ -86,9 +86,10 @@ function putin()
                 cache: false,
                 processData: false,
                 contentType: false,
+                beforeSend : function(){$('#detailarea').block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
                 success: function(response) 
                 {
-                    alert(response)
+                    $('#detailarea').unblock()
                     if(response == '0')
                     {
                         Swal.fire({

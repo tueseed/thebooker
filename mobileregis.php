@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row" id="regisarea">
     <div class="col-lg-4 offset-lg-4">
         <div class="form-group">
             <label for="nameInput" class="font-weight-bold text-success"><i class="fas fa-user-edit"></i> ชื่อ - นามสกุล</label>
