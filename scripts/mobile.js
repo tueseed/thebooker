@@ -12,7 +12,8 @@ liff
   })
 $(document).ready(
     function(){
-                querybook()
+      checkregis()          
+      querybook()
               }
 )
 
@@ -90,4 +91,32 @@ function makebookcard(bookdetail)
     '</a>',
   '</div>'
   ].join("")
+}
+
+
+function checkregis(uid)
+{
+  var formData = new FormData()
+  formData.append('command','checkregis')
+  formData.append('uid',sessionStorage.getItem('userId'))
+  $.ajax({
+            url: 'api/member_api.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(response) 
+            {
+                if(response == 0)
+                {
+                  window.location.href = 'index.php?action=regis'
+                }
+                else if(response == 1)
+                {
+                  window.location.href = 'index.php?action=home'
+                } 
+            }				
+        })
 }

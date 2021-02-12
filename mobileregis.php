@@ -1,4 +1,4 @@
-<div class="row ml-2 mr-2">
+<div class="row ml-2 mr-2 mt-5">
     <div class="col-lg-12 text-center">
         <span class="text-success font-weight-bold" style="font-size:35px;">ลงทะเบียนสมาชิก</span>
     </div>
