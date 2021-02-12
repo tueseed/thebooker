@@ -114,10 +114,10 @@ function checkregis(uid)
                 {
                   window.location.href = 'index.php?action=mobileregis'
                 }
-                else if(response == 1)
-                {
-                  window.location.href = 'index.php?action=mobile'
-                } 
+                // else if(response == 1)
+                // {
+                //   window.location.href = 'index.php?action=mobile'
+                // } 
             }				
         })
 }
