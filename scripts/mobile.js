@@ -9,11 +9,11 @@ liff
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
                                             
-                            })
+                            }).then({checkregis()   })
   })
 $(document).ready(
     function(){
-      checkregis()     
+        
       querybook()
               }
 )
