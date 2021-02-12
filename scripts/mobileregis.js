@@ -1,6 +1,10 @@
 $('#header').hide()
 $('#circularMenu').hide()
-
+liff
+  .init({
+    liffId: "1655539437-ploBZxNG" // Use own liffId
+  })
+  
 function regis_member()
 {
     var formData = new FormData()

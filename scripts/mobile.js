@@ -8,12 +8,12 @@ liff
                                         const name = profile.displayName
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
-                                        checkregis()      
+                                            
                             })
   })
 $(document).ready(
     function(){
-          
+      checkregis()     
       querybook()
               }
 )
@@ -112,11 +112,11 @@ function checkregis(uid)
             {
                 if(response == 0)
                 {
-                  window.location.href = 'index.php?action=regis'
+                  window.location.href = 'index.php?action=mobileregis'
                 }
                 else if(response == 1)
                 {
-                  window.location.href = 'index.php?action=home'
+                  window.location.href = 'index.php?action=mobile'
                 } 
             }				
         })
