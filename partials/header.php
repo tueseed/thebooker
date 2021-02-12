@@ -56,6 +56,10 @@
                   <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
                   เพิ่มข้อมูลหนังสือ
                 </a>
+                <a class="dropdown-item" href="?action=return" name="admin_menu1" id="admin_menu_addbook">
+                  <i class="fas fa-book-medical fa-sm fa-fw mr-2 text-gray-400"></i>
+                  ข้อมูลการยืม
+                </a>
                 <a class="dropdown-item" href="#" onclick="des_session()">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   ออกจากระบบ
