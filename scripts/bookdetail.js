@@ -1,3 +1,5 @@
+$('#circularMenu').hide()
+
 querybookdetail()
 
 function reqpicurl()

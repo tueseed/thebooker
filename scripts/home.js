@@ -1,3 +1,5 @@
+$('#circularMenu').hide()
+
 $(document).ready(
                 function(){
                             processLogin()

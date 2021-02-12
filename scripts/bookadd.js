@@ -1,3 +1,4 @@
+$('#circularMenu').hide()
 function reqpicurl()
 {
     if($('#bookcoverimage').length == 0)
