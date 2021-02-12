@@ -8,12 +8,12 @@ liff
                                         const name = profile.displayName
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
-                                            
+                                        checkregis()  
                             })
   })
 $(document).ready(
     function(){
-      checkregis()
+      
       querybook()
               }
 )
