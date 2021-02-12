@@ -7,7 +7,7 @@ function check_basket()
     var formData = new FormData()
     formData.append('command','checkmyborrow')
     formData.append('uid',sessionStorage.getItem('uid'))
-    formData.append('uid','Ud3fc4e16f6783511912c838e9c4a4149')
+    // formData.append('uid','Ud3fc4e16f6783511912c838e9c4a4149')
     $.ajax({
                 url: 'api/api_book_all.php',
                 method: 'POST',
