@@ -129,6 +129,7 @@ function query_book_inborrow(bill_id)
               $('#btn_'+bookid).removeClass("btn-success")
               $('#btn_'+bookid).addClass("btn-success")
               $('#btn_'+bookid).prop("disabled",true)
+              $('#btn_'+bookid).html('<i class="fas fa-undo"  aria-hidden="true"></i> คืนหนังสือแล้ว')
               $('#btn_'+bookid).unblock()
               // checkbookstatusforbtnreturn(bookid)
             }							
