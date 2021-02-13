@@ -87,7 +87,20 @@ function render_billlist(bill,j)
 
 function render_detail_bill(book,k)
 {
- return[
-     '<p class="text-success">'+parseInt(k+1)+'.'+book.bookname+'</p>'
+    var bookstatus = book.book_status
+    var textadd = ''
+    var textcolor = ''
+    if(bookstatus == '0')
+    { 
+      textadd=' (คืนแล้ว)'
+      textcolor ='btn-secondary'
+    }
+    else if(bookstatus == '1')
+    {
+        textadd=' '
+        textcolor ='btn-success'
+    }
+    return[
+     '<p class="' + textcolor + '">'+parseInt(k+1)+'.'+book.bookname + textadd + '</p>'
  ].join("")
 }
