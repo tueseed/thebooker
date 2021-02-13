@@ -170,5 +170,13 @@
         $sqlreturnbook = "UPDATE tbl_book SET book_status = 0 WHERE bookid='$bookid'";
         mysqli_query($conn,$sqlreturnbook);
     }
+    else if($cmd == 'checkbookstatus')
+    {
+        $bookid = $_POST["bookid"];
+        $sqlcheckbookstatus = "SELECT * FROM tbl_book WHERE bookid = '$bookid'";
+        $querycheck = mysqli_query($conn,$sqlcheckbookstatus);
+        $obj = mysqli_fetch_assoc($querycheck);
+        echo $obj["book_status"];
+    }
     
 ?>

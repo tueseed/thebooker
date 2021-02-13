@@ -101,7 +101,6 @@ function query_book_inborrow(bill_id)
 
   function returnbook(bookid)
   {
-    console.log('return')
     var formData = new FormData()
     formData.append('command','returnbook')
     formData.append('bookid',bookid)
@@ -126,10 +125,49 @@ function query_book_inborrow(bill_id)
                 // }
                    
             },
-            complete :function(){$('#btn_'+bookid).unblock()}							
+            complete :function(){
+              $('#btn_'+bookid).removeClass("btn-success")
+              $('#btn_'+bookid).addClass("btn-success")
+              $('#btn_'+bookid).prop("disabled",true)
+              $('#btn_'+bookid).unblock()
+              // checkbookstatusforbtnreturn(bookid)
+            }							
         })
     
     
+  }
+
+  function checkbookstatusforbtnreturn(bookid)
+  {
+    var formData = new FormData()
+    formData.append('command','checkbookstatus')
+    formData.append('bookid',bookid)
+    $.ajax({
+            url: 'api/api_book_all.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            beforeSend : function(){$('#btn_'+bookid).block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
+            success: function() 
+            {
+                // var obj = JSON.parse(response)
+                // console.log(obj)
+                // var j =0
+                // while(obj[j])
+                // {
+                //   $('#lineItem').append(renderbookinborrow(obj[j],j))
+                //   j++
+                // }
+                   
+            },
+            complete :function(){
+              $('#btn_'+bookid).unblock()
+              checkbookstatusforbtnreturn(bookid)
+            }							
+        })
   }
 
   $('#bill_detail').on('hidden.bs.modal', function () {
