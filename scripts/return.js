@@ -88,7 +88,7 @@ function query_book_inborrow(bill_id)
     }
     return[
       '<p><span class="text-success" style="font-size:20px;">' + parseInt(j + 1) + '.' + book.bookname + '</span>',
-        '<button class="btn ' + btncolor + ' float-right">',
+        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'">',
         '<i class="fas fa-undo" onclick="returnbook(' + book.bookid + ')" aria-hidden="true"></i>  ' + btnbookrt,
         '</button>',
         '</p>',
@@ -101,7 +101,7 @@ function query_book_inborrow(bill_id)
 
   function returnbook(bookid)
   {
-    console.log('return')
+    
     var formData = new FormData()
     formData.append('command','returnbook')
     formData.append('bookid',bookid)
@@ -113,6 +113,7 @@ function query_book_inborrow(bill_id)
             cache: false,
             processData: false,
             contentType: false,
+            beforeSend : function(){$('#btn_'+bookid).block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
             success: function() 
             {
                 // var obj = JSON.parse(response)
@@ -124,7 +125,8 @@ function query_book_inborrow(bill_id)
                 //   j++
                 // }
                    
-            }				
+            },
+            complete :function(){$('#btn_'+bookid).unblock()}							
         })
     
     

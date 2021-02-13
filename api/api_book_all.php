@@ -168,6 +168,7 @@
     {
         $bookid = $_POST["bookid"];
         $sqlreturnbook = "UPDATE tbl_book SET book_status = 1 WHERE bookid='$bookid'";
+        mysqli_query($conn,$sqlreturnbook);
     }
     
 ?>
