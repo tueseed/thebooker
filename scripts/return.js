@@ -101,6 +101,7 @@ function query_book_inborrow(bill_id)
 
   function returnbook(bookid)
   {
+    console.log('return')
     var formData = new FormData()
     formData.append('command','returnbook')
     formData.append('bookid',bookid)
@@ -112,7 +113,7 @@ function query_book_inborrow(bill_id)
             cache: false,
             processData: false,
             contentType: false,
-            success: function(response) 
+            success: function() 
             {
                 // var obj = JSON.parse(response)
                 // console.log(obj)
