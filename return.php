@@ -10,12 +10,13 @@
       <div class="card-body">
             สถานะใบยืม
             <div class="btn-group" role="group" aria-label="Basic example" id="btnGroupgroup">
-              <button type="button" value="1" onclick="refreshData(this.value)" class="btn btn-success" >กำลังยืม</button>
-              <button type="button" value="2" onclick="refreshData(this.value)" class="btn btn-secondary">คืนแล้ว</button>
-              <button type="button" value="0" onclick="refreshData()" class="btn btn-primary">ทั้งหมด</button>
+              <button type="button" value="1" onclick="refreshData(this.value)" class="btn btn-success" ><i class="fas fa-clock"></i>  รอส่งคืน</button>
+              <button type="button" value="2" onclick="refreshData(this.value)" class="btn btn-secondary"><i class="fas fa-check-circle"></i>  เสร็จสิ้น</button>
+              <button type="button" value="3" onclick="refreshData(this.value)" class="btn btn-danger"><i class="fas fa-exclamation-circle"></i>  เกินกำหนด</button>
+              <button type="button" value="0" onclick="refreshData()" class="btn btn-primary"><i class="fas fa-list"></i> ทั้งหมด</button>
             </div>
           <table 
-            id="tbl_data_tech"
+            id="table_bill"
             data-toggle="table" 
             data-pagination="true"
             data-pagination-v-align="both"
@@ -32,7 +33,7 @@
               <th data-field="memberid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> รหัสนักรียน/รหัสพนักงาน</th>
               <th data-field="date_1" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> วันที่ยืม</th>
               <th data-field="date_2" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> กำหนดคืน</th>
-              <th data-field="bill_status" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะ</th>
+              <th data-field="bill_status" data-sortable="true" data-formatter="billstatus"><i class="fas fa-user"></i> สถานะ</th>
               <th data-field="bill_id" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
             </tr>
             </thead>

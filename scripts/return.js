@@ -19,18 +19,20 @@ function checkacctypefortbl(value, row, index)
   return "<div class='text-center'>" + acctype + "</div>";
 }
 
-function checkaccstatusfortbl(value, row, index)
+function billstatus(value, row, index)
 {
-  if(value == 0)
+  if(value == 1)
   {
-    var acctype = "ปกติ"
+    var billstatus = "กำลังยืม"
+    var textcolor = "text-success"
   }
-  else if(value == 1)
+  else if(value == 2)
   {
-    var acctype = "ถูกระงับ/ยังไม่เปิดใช้งาน"
+    var billstatus = "เสร็จสิ้น"
+    var textcolor = "text-secondary"
 
   }
-  return "<div class='text-center'>" + acctype + "</div>";
+  return "<div class='text-center'><span class='" + textcolor + "'>" + billstatus + "</span></div>";
 }
 
 
@@ -172,6 +174,22 @@ function query_book_inborrow(bill_id)
             }							
         })
   }
+
+
+  function refreshData(billstatus)
+{
+  var $table = $('#table_bill')
+  if(!billstatus)
+  {$table.bootstrapTable('refreshOptions', {url: './api/datatable/dataforbilltable.php'}) }
+  else
+  {
+    $table.bootstrapTable('refreshOptions', {
+      url: './api/datatable/dataforbilltablequery.php?bill_status='+billstatus
+    })
+  }
+  
+}
+
 
   $('#bill_detail').on('hidden.bs.modal', function () {
     $('#lineItem').empty()
