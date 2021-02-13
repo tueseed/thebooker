@@ -96,7 +96,7 @@ function makebookcard(bookdetail)
 }
 
 
-function checkregis(uid)
+async function checkregis(uid)
 {
   var formData = new FormData()
   formData.append('command','checkregis')
