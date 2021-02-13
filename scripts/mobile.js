@@ -127,7 +127,7 @@ async function check_account_status()
 {
   var formData = new FormData()
   formData.append('command','checkaccountstatus')
-  formData.append('uid',sessionStorage.getItem('userId'))
+  formData.append('uid',sessionStorage.getItem('uid'))
   $.ajax({
             url: 'api/member_api.php',
             method: 'POST',
