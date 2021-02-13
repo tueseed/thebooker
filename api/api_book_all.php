@@ -167,8 +167,12 @@
     else if($cmd == 'returnbook')
     {
         $bookid = $_POST["bookid"];
+        $borrowid = $_POST["borrowid"];
         $sqlreturnbook = "UPDATE tbl_book SET book_status = 0 WHERE bookid='$bookid'";
         mysqli_query($conn,$sqlreturnbook);
+
+        $sql_update_return_status_in_borrow_tbl = "UPDATE tbl_borrow SET return_status = 1 WHERE borrow_id ='$borrowid'";
+        mysqli_query($conn,$sql_update_return_status_in_borrow_tbl);
     }
     else if($cmd == 'checkbookstatus')
     {

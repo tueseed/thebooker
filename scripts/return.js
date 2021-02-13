@@ -73,22 +73,22 @@ function query_book_inborrow(bill_id)
 
   function renderbookinborrow(book,j)
   {
-    var bookstatus = book.book_status
+    var returnstatus = book.return_status
     var btnbookrt = ''
     var btncolor = ''
-    if(bookstatus == '0')
+    if(returnstatus == '1')
     { 
       btnbookrt='คืนหนังสือแล้ว'
       btncolor ='btn-secondary'
     }
-    else if(bookstatus == '1')
+    else if(returnstatus == '0')
     {
       btnbookrt = 'คืนหนังสือ'
       btncolor ='btn-success'
     }
     return[
       '<p><span class="text-success" style="font-size:20px;">' + parseInt(j + 1) + '.' + book.bookname + '</span>',
-        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'" onclick="returnbook(' + book.bookid + ')">',
+        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'" onclick="returnbook(' + book.bookid + ','+book.borrow_id+')">',
         '<i class="fas fa-undo"  aria-hidden="true"></i>  ' + btnbookrt,
         '</button>',
         '</p>',
@@ -99,11 +99,12 @@ function query_book_inborrow(bill_id)
     ].join("")
   }
 
-  function returnbook(bookid)
+  function returnbook(bookid,borrowid)
   {
     var formData = new FormData()
     formData.append('command','returnbook')
     formData.append('bookid',bookid)
+    formData.append('borrowid',borrowid)
     $.ajax({
             url: 'api/api_book_all.php',
             method: 'POST',
