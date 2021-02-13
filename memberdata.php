@@ -25,7 +25,7 @@
               <th data-field="class" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> ชั้นเรียน/หน่วยงน</th>
               <th data-field="memberid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> รหัสนักรียน/รหัสพนักงาน</th>
               <th data-field="levelaccount" data-sortable="true" data-formatter="checkacctypefortbl"><i class="fas fa-info"></i> ประเภทบัญชี</th>
-              <th data-field="accountstatus" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะบัญชี</th>
+              <th data-field="lineuid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะบัญชี</th>
               <th data-field="lineuid" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
             </tr>
             </thead>
@@ -35,7 +35,7 @@
     </div>
     </div>
 
-    <div class='modal fade' tabindex='-1' role='dialog' id='member_detail'>
+  <div class='modal fade' tabindex='-1' role='dialog' id='member_detail'>
   <div class='modal-dialog modal-md' role='document' >
     <div class='modal-content'>
       <div class='modal-header'>
@@ -47,7 +47,7 @@
         </button>
       </div>
       <div class='modal-body'>
-          <div class="row">
+          <div class="row" id="body_member_modal">
             <div class="col-md-12">
               <input type="hidden" id="lineuid">
               <input type="text" class="form-control mt-1" id="staffnumber" placeholder="รหัสประจำตัว" >
@@ -58,12 +58,13 @@
                 <option value="1">ประเภทผู้ใช้งาน : ผู้ดูแล</option>
               </select>
               <select class="form-control mt-1" id="accstatus">
-                <option value="0">สถานะบัญชี : ปกติ</option>
-                <option value="1">สถานะบัญชี : ระงับ/ยังไม่เปิดใช้งาน</option>
+                <option value="0">สถานะบัญชี : ระงับ/ยังไม่เปิดใช้งาน</option>
+                <option value="1">สถานะบัญชี : ปกติ</option>
               </select>
             </div>
           </div>
-      </div> <div class="modal-footer">
+      </div> 
+      <div class="modal-footer">
       <button class="btn btn-danger mr-auto"  id="save_btn" value="del" onclick="delDatafn(this.value)" style="border-radius:50px 50px;">
           <i class="fas fa-save" aria-hidden="true"></i>
           ลบ

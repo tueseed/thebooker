@@ -20,7 +20,7 @@
     }else if($cmd == 'queryedit')
     {
         $uid = $_POST["uid"];
-        $querymember = "SELECT * FROM tbl_member";
+        $querymember = "SELECT * FROM tbl_member WHERE lineuid = '$uid'";
         $query = mysqli_query($conn,$querymember);
         $data = array();
         while($obj = mysqli_fetch_assoc($query))

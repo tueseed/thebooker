@@ -57,6 +57,7 @@ function query_member(lineuid)
             cache: false,
             processData: false,
             contentType: false,
+            beforeSend : function(){$('#body_member_modal').block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
             success: function(response) 
             {
                 var obj = JSON.parse(response)
@@ -68,7 +69,12 @@ function query_member(lineuid)
                 $('#lineuid').val(obj[0].lineuid)
                 console.log(obj)
                    
-            }				
+            },
+            
+            complete :function()
+            {
+              $('#body_member_modal').unblock()
+            }					
         });
   }
 
@@ -90,7 +96,11 @@ function query_member(lineuid)
             cache: false,
             processData: false,
             contentType: false,
-            beforeSend : function(){$('#member_data_area').block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})},
+            beforeSend : function()
+            {
+              $("#member_detail").modal("hide")
+              $('#member_data_area').block({message: '<div class="spinner-border text-primary display-4" style="width: 4rem; height: 4rem;" role="status"><span class="sr-only">Loading...</span></div>',overlayCSS : {backgroundColor: '#ffffff',opacity: 1},css : {opacity: 1,border: 'none',}})
+            },
             success: function(response) 
             {
                 // var obj = JSON.parse(response)
@@ -101,8 +111,14 @@ function query_member(lineuid)
                 console.log(response)
                    
             }	,
-            complete :function(){$('#member_data_area').unblock()
+            complete :function()
+            {
+              $('#member_data_area').unblock()
             }					
         });
 
   }
+
+  // $('#bill_detail').on('hidden.bs.modal', function () {
+  //   $('#lineItem').empty()
+  // })
