@@ -98,7 +98,7 @@ async function checkregis(uid)
             cache: false,
             processData: false,
             contentType: false,
-            success: function(response) 
+            success: async function(response) 
             {
                 if(response == 0)
                 {
@@ -126,7 +126,7 @@ async function check_account_status()
             cache: false,
             processData: false,
             contentType: false,
-            success: function(response) 
+            success: async function(response) 
             {
                var obj = JSON.parse(response)  
                if(obj[0].accountstatus == 0)
