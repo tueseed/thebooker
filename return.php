@@ -32,7 +32,7 @@
               <th data-field="memberid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> รหัสนักรียน/รหัสพนักงาน</th>
               <th data-field="date_1" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> วันที่ยืม</th>
               <th data-field="date_2" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> กำหนดคืน</th>
-              <th data-field="accountstatus" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะ</th>
+              <th data-field="bill_status" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะ</th>
               <th data-field="bill_id" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
             </tr>
             </thead>
