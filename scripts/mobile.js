@@ -9,7 +9,7 @@ liff
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
                                         checkregis() 
-                                        check_account_status() 
+                                        await check_account_status() 
                             })
   })
 $(document).ready(
