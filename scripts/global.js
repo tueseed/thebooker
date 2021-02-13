@@ -24,6 +24,9 @@ function toggle_menu()
     document.getElementById('circularMenu').classList.toggle('active');
 }
 
+$('#admin_menu_1').hide()
+$('#admin_menu_2').hide()
+$('#admin_menu_3').hide()
 
 
 

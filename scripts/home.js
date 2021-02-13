@@ -135,6 +135,12 @@ async function check_account_status()
                  sessionStorage.clear()
                  window.location.href = 'index.php?action=home'
                }
+               else if(obj[0].accountstatus == 0 && obj[0].levelaccount == 1)
+               {
+                $('#admin_menu_1').show()
+                $('#admin_menu_2').show()
+                $('#admin_menu_3').show()
+               }
             }				
         })
 }
