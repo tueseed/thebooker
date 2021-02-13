@@ -21,11 +21,11 @@ function checkacctypefortbl(value, row, index)
 
 function checkaccstatusfortbl(value, row, index)
 {
-  if(value == 0)
+  if(value == 1)
   {
     var acctype = "ปกติ"
   }
-  else if(value == 1)
+  else if(value == 0)
   {
     var acctype = "ถูกระงับ/ยังไม่เปิดใช้งาน"
 
