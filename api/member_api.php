@@ -39,6 +39,17 @@
         $queryupdate = "UPDATE tbl_member SET membername = '$membername',class = '$classroom',memberid = '$memberid',levelaccount = '$acctype',accountstatus = '$accstatus' WHERE lineuid = '$uid'";
         mysqli_query($conn,$queryupdate);
         echo 'edited';
+    }else if($cmd == 'checkaccountstatus')
+    {
+        $uid = $_POST["uid"];
+        $sql_check_account_status = "SELECT * FROM tbl_member WHERE lineuid = '$uid'";
+        $query_check_account_status = mysqli_query($conn,$sql_check_account_status);
+        $data = array();
+        while($obj = mysqli_fetch_assoc($query_check_account_status))
+        {
+            array_push($data,$obj);
+        }
+        echo json_encode($data); 
     }
 
 

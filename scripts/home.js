@@ -104,10 +104,37 @@ async function checkregis(uid)
                 {
                   window.location.href = 'index.php?action=regis'
                 }
-                else if(response == 1)
-                {
-                  window.location.href = 'index.php?action=home'
-                } 
+                await check_account_status()
+                // else if(response == 1)
+                // {
+                //   window.location.href = 'index.php?action=home'
+                // } 
+            }				
+        })
+}
+
+async function check_account_status()
+{
+  var formData = new FormData()
+  formData.append('command','checkaccountstatus')
+  formData.append('uid',sessionStorage.getItem('userId'))
+  $.ajax({
+            url: 'api/member_api.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(response) 
+            {
+               var obj = JSON.parse(response)  
+               if(obj[0].accountstatus == 0)
+               {
+                 await Swal.fire('คำเตือน!','บัญชีของคุณยังไม่ได้รับการยืนยัน<br>กรุณาติดต่อเจ้าหน้าที่','warning')
+                 sessionStorage.clear()
+                 window.location.href = 'index.php?action=home'
+               }
             }				
         })
 }
