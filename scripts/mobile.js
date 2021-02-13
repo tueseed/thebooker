@@ -8,7 +8,7 @@ liff
                                         const name = profile.displayName
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
-                                        checkregis() 
+                                        await checkregis() 
                                         await check_account_status() 
                             })
   })
