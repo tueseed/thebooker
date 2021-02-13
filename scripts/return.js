@@ -88,8 +88,8 @@ function query_book_inborrow(bill_id)
     }
     return[
       '<p><span class="text-success" style="font-size:20px;">' + parseInt(j + 1) + '.' + book.bookname + '</span>',
-        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'">',
-        '<i class="fas fa-undo" onclick="returnbook(' + book.bookid + ')" aria-hidden="true"></i>  ' + btnbookrt,
+        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'" onclick="returnbook(' + book.bookid + ')">',
+        '<i class="fas fa-undo"  aria-hidden="true"></i>  ' + btnbookrt,
         '</button>',
         '</p>',
         '<p>วันที่ยืม : ' + book.date + '</p>',
