@@ -101,7 +101,7 @@ function query_book_inborrow(bill_id)
 
   function returnbook(bookid)
   {
-    
+    console.log('return')
     var formData = new FormData()
     formData.append('command','returnbook')
     formData.append('bookid',bookid)
