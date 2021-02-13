@@ -51,6 +51,7 @@
     else if($cmd == 'putin')
     {
         $date = date('Y-m-d H:i:s');
+        $datereturn = date( "Y-m-d", strtotime( "$date +7 day" ) );
         $bookid = $_POST["bookid"];
         $uid = $_POST["uid"];
         /////check bill last////
@@ -64,7 +65,7 @@
             $queryinsert = mysqli_query($conn,$sql_creat_bill);
             $lastid = mysqli_insert_id($conn);
             
-            $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id) VALUES('$uid','$bookid','$date','$lastid')";
+            $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id,date_return) VALUES('$uid','$bookid','$date','$lastid','$datereturn')";
             mysqli_query($conn,$putinsqltext);
             echo '0';
         }
@@ -78,7 +79,7 @@
             
             if($obj_chk["lastbill"] == null)
             {
-                $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id) VALUES('$uid','$bookid','$date','$last_bill')";
+                $putinsqltext = "INSERT INTO tbl_borrow(uid,book_id,date,bill_id,date_return) VALUES('$uid','$bookid','$date','$last_bill','$datereturn')";
                 mysqli_query($conn,$putinsqltext);
                 echo '0';
             }
@@ -117,8 +118,11 @@
     }
     else if($cmd == 'checkout')
     {
+        $date = date('Y-m-d H:i:s');
+        $datereturn = date( "Y-m-d", strtotime( "$date +7 day" ) );
+        
         $bill_id = $_POST["bill_id"];
-        $sqlcheckout = "UPDATE tbl_bill SET bill_status=1 WHERE bill_id='$bill_id'";
+        $sqlcheckout = "UPDATE tbl_bill SET bill_status=1,date_1='$date',date_2='$datereturn' WHERE bill_id='$bill_id'";
         mysqli_query($conn,$sqlcheckout);
 
         $sql_from_borrow_for_updatebook = "SELECT * FROM tbl_borrow WHERE bill_id='$bill_id'";
@@ -144,6 +148,18 @@
             $querybook = mysqli_query($conn,$sql_book);
             $objbook = mysqli_fetch_all($querybook,MYSQLI_ASSOC);
             $obj["book"]= $objbook;
+            array_push($data,$obj);
+        }
+        echo json_encode($data); 
+    }
+    else if($cmd == 'manageborrow')
+    {
+        $bill_id = $_POST["bill_id"];
+        $sqltextmanageborrow = "SELECT * FROM tbl_borrow INNER JOIN tbl_book ON tbl_borrow.book_id = tbl_book.bookid WHERE bill_id ='$bill_id'";
+        $query = mysqli_query($conn,$sqltextmanageborrow);
+        $data = array();
+        while($obj = mysqli_fetch_assoc($query))
+        {
             array_push($data,$obj);
         }
         echo json_encode($data); 

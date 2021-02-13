@@ -17,16 +17,17 @@
             data-sticky-header="true"
             data-search="true"
             data-page-list="[5, 10, 20, 100, ALL]"
-            data-url="./api/datatable/dataformembertable.php"
+            data-url="./api/datatable/dataforbilltable.php"
             data-page-size="5">
             <thead>
               <tr>
               <th data-field="membername" data-sortable="true" data-formatter="textCenterFormatter">ชื่อ-นามสกุล</th> 
               <th data-field="class" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> ชั้นเรียน/หน่วยงน</th>
               <th data-field="memberid" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas  fa-sort-numeric-down"></i> รหัสนักรียน/รหัสพนักงาน</th>
-              <th data-field="levelaccount" data-sortable="true" data-formatter="checkacctypefortbl"><i class="fas fa-info"></i> ประเภทบัญชี</th>
-              <th data-field="accountstatus" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะบัญชี</th>
-              <th data-field="lineuid" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
+              <th data-field="date_1" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> วันที่ยืม</th>
+              <th data-field="date_2" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-info"></i> กำหนดคืน</th>
+              <th data-field="accountstatus" data-sortable="true" data-formatter="textCenterFormatter"><i class="fas fa-user"></i> สถานะการยืม</th>
+              <th data-field="bill_id" data-sortable="true" data-formatter="editdata"><i class="fas fa-user"></i> การดำเนินการ</th>
             </tr>
             </thead>
           </table>
@@ -35,20 +36,22 @@
     </div>
     </div>
 
-    <div class='modal fade' tabindex='-1' role='dialog' id='member_detail'>
+  <div class='modal fade' tabindex='-1' role='dialog' id='bill_detail'>
   <div class='modal-dialog modal-md' role='document' >
     <div class='modal-content'>
       <div class='modal-header'>
         <h5 class='modal-title font-weight-bold' id="head_modal">
-          แก้ไขข้อมูล <span id="editId"></span>
+          จัดการใบยืม <span id="editId"></span>
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" class="white-text">&times;</span>
         </button>
       </div>
       <div class='modal-body'>
-          <div class="row">
-            <div class="col-md-12">
+          <div class="row" >
+            <div class="col-lg-12" id="lineItem">
+            </div>
+            <!-- <div class="col-md-12">
               <input type="hidden" id="lineuid">
               <input type="text" class="form-control mt-1" id="staffnumber" placeholder="รหัสประจำตัว" >
               <input type="text" class="form-control mt-1" id="membername"   placeholder="ชื่อ-นามสกุล" >
@@ -61,18 +64,15 @@
                 <option value="0">สถานะบัญชี : ปกติ</option>
                 <option value="1">สถานะบัญชี : ระงับ/ยังไม่เปิดใช้งาน</option>
               </select>
-            </div>
+            </div> -->
           </div>
-      </div> <div class="modal-footer">
-      <button class="btn btn-danger mr-auto"  id="save_btn" value="del" onclick="delDatafn(this.value)" style="border-radius:50px 50px;">
+      </div> 
+      <!-- <div class="modal-footer">
+        <button class="btn btn-outline-primary"  id="save_btn" value="edit" onclick="close(this.value)" style="border-radius:50px 50px;">
           <i class="fas fa-save" aria-hidden="true"></i>
-          ลบ
+          ปิด
         </button>
-        <button class="btn btn-outline-primary"  id="save_btn" value="edit" onclick="editDatafn(this.value)" style="border-radius:50px 50px;">
-          <i class="fas fa-save" aria-hidden="true"></i>
-          บันทึก
-        </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

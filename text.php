@@ -1,11 +1,10 @@
 <?php
 
-    $checkbook = "SELECT * FROM tbl_borrow WHERE book_id='11'";
-
-    $result = mysqli_query($conn,$checkbook);
-    $obj = mysqli_num_rows($result);
- 
-    echo $obj;
+$dt = date("Y-m-d");
+$datereturn = date( "Y-m-d", strtotime( "$dt +7 day" ) );
+echo $dt;
+echo '<br>';
+echo $datereturn;
 
 
 
