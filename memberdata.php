@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<div class="row mt-3 ml-2 mr-2">
+<div class="row mt-3 ml-2 mr-2" id="member_data_area">
   <div class="col-lg-12">
     <div class="card shadow">
       <div class="card-body">
