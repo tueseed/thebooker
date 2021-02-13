@@ -90,12 +90,12 @@ function render_detail_bill(book,k)
     var bookstatus = book.return_status
     var textadd = ''
     var textcolor = ''
-    if(bookstatus == '1')
+    if(bookstatus == '0')
     { 
       textadd=' (คืนแล้ว)'
       textcolor ='text-secondary'
     }
-    else if(bookstatus == '0')
+    else if(bookstatus == '1')
     {
         textadd=' '
         textcolor ='text-success'

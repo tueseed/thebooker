@@ -76,12 +76,12 @@ function query_book_inborrow(bill_id)
     var returnstatus = book.return_status
     var btnbookrt = ''
     var btncolor = ''
-    if(returnstatus == '1')
+    if(returnstatus == '0')
     { 
       btnbookrt='คืนหนังสือแล้ว'
       btncolor ='btn-secondary'
     }
-    else if(returnstatus == '0')
+    else if(returnstatus == '1')
     {
       btnbookrt = 'คืนหนังสือ'
       btncolor ='btn-success'
