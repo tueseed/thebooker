@@ -168,18 +168,21 @@
     {
         $bookid = $_POST["bookid"];
         $borrowid = $_POST["borrowid"];
+        $billid = $_POST["billid"];
         $sqlreturnbook = "UPDATE tbl_book SET book_status = 0 WHERE bookid='$bookid'";
         mysqli_query($conn,$sqlreturnbook);
 
         $sql_update_return_status_in_borrow_tbl = "UPDATE tbl_borrow SET return_status = 0 WHERE borrow_id ='$borrowid'";
         mysqli_query($conn,$sql_update_return_status_in_borrow_tbl);
 
-        $sql_check_book_in_bill = "SELECT sum(return_status) AS result FROM tbl_borrow WHERE bill_id='$bill_id'";
+        $sql_check_book_in_bill = "SELECT sum(return_status) AS result FROM tbl_borrow WHERE bill_id='$billid'";
         $query_check_book_in_bill = mysqli_query($conn,$sql_check_book_in_bill);
-        if($query_check_book_in_bill["result"] == 0)
+        $obj_check_book_in_bill = mysqli_fetch_assoc($query_check_book_in_bill);
+        if($obj_check_book_in_bill["result"] == '0')
         {
-            $sql_update_close__bill = "UPDATE tbl_bill SET bill_status =2 WHERE bill_id='$bill_id'";
+            $sql_update_close__bill = "UPDATE tbl_bill SET bill_status =2 WHERE bill_id='$billid'";
             mysqli_query($conn,$sql_update_close__bill);
+            
         }
     }
     else if($cmd == 'checkbookstatus')

@@ -88,7 +88,7 @@ function query_book_inborrow(bill_id)
     }
     return[
       '<p><span class="text-success" style="font-size:20px;">' + parseInt(j + 1) + '.' + book.bookname + '</span>',
-        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'" onclick="returnbook(' + book.bookid + ','+book.borrow_id+')">',
+        '<button class="btn ' + btncolor + ' float-right" id="btn_'+book.bookid+'" onclick="returnbook(' + book.bookid + ','+book.borrow_id+','+book.bill_id+')">',
         '<i class="fas fa-undo"  aria-hidden="true"></i>  ' + btnbookrt,
         '</button>',
         '</p>',
@@ -99,12 +99,13 @@ function query_book_inborrow(bill_id)
     ].join("")
   }
 
-  function returnbook(bookid,borrowid)
+  function returnbook(bookid,borrowid,billid)
   {
     var formData = new FormData()
     formData.append('command','returnbook')
     formData.append('bookid',bookid)
     formData.append('borrowid',borrowid)
+    formData.append('billid',billid)
     $.ajax({
             url: 'api/api_book_all.php',
             method: 'POST',
