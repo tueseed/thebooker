@@ -69,7 +69,7 @@ function render_billlist(bill,j)
     }
     
     return[
-        '<p>'+ parseInt(j+1 )+'.ใบยืมเลขที่ ' + bill.bill_id,
+        '<p>'+ parseInt(j+1 )+'.ใบยืมเลขที่ ' + bill.bill_id + ' กำหนดส่งคืน ' + bill.date_2,
         '<button class="btn btn-success float-right" data-toggle="collapse" data-target="#bill'+bill.bill_id+'" aria-expanded="false" aria-controls="collapseExample">',
             '<i class="fas fa-eye" aria-hidden="true"></i>',
         '</button>',
