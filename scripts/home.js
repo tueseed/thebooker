@@ -181,7 +181,7 @@ function makebookcard(bookdetail)
             '<p class="card-texts">ผู้เขียน : ' + bookdetail.writer + '</p>',
             '<p class="card-text">หมวดหมู่ : ' + bookdetail.category + '</p>',
             '<p class="card-text">สถานะ : ' + bookstatustext+ '</p>',
-            '<p class="card-text">กำหนดคืน : ' +bookdetail.datereturn + '</p>',
+            // '<p class="card-text">กำหนดคืน : ' +bookdetail.datereturn + '</p>',
         '</div>',
       '</div>',
     '</a>',
