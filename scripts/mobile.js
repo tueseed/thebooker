@@ -8,7 +8,8 @@ liff
                                         const name = profile.displayName
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
-                                        checkregis()  
+                                        checkregis() 
+                                        check_account_status() 
                             })
   })
 $(document).ready(
@@ -118,6 +119,33 @@ function checkregis(uid)
                 // {
                 //   window.location.href = 'index.php?action=mobile'
                 // } 
+            }				
+        })
+}
+
+async function check_account_status()
+{
+  var formData = new FormData()
+  formData.append('command','checkaccountstatus')
+  formData.append('uid',sessionStorage.getItem('userId'))
+  $.ajax({
+            url: 'api/member_api.php',
+            method: 'POST',
+            data:formData,
+            async: true,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: async function(response) 
+            {
+               var obj = JSON.parse(response)  
+               if(obj[0].accountstatus == 0)
+               {
+                 await Swal.fire('คำเตือน!','บัญชีของคุณยังไม่ได้รับการยืนยัน<br>กรุณาติดต่อเจ้าหน้าที่','warning')
+                 sessionStorage.clear()
+                 liff.closeWindow()
+               }
+               
             }				
         })
 }
