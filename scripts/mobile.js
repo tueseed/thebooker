@@ -4,7 +4,7 @@ liff
     liffId: "1655539437-ploBZxNG" // Use own liffId
   })
   .then(() => {
-    liff.getProfile().then(profile => {
+    liff.getProfile().then(async profile => {
                                         const name = profile.displayName
                                         const uid = profile.userId
                                         sessionStorage.setItem('uid',uid)
